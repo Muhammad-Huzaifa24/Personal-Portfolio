@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "../../styles/Navbar.module.css";
 
 const Navbar = () => {
-	const [menuOpen, SetMenuOpen] = useState(false);
+	let [menuOpen, SetMenuOpen] = useState(false);
 
 	const closeMenu = () => {
 		if (!menuOpen) {
