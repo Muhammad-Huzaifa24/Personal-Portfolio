@@ -13,7 +13,7 @@ const Hero = () => {
 				<SiHey />
 				<span>I am</span>
 			</h2>
-			<h1 className="text-6xl font-semibold text-white sm:text-7xl">
+			<h1 className="text-5xl font-semibold text-white sm:text-7xl">
 				Muhammad Huzaifa Khawar
 			</h1>
 			<p className="text-md text-gray-400 leading-7 my-4 sm:text-lg sm:leading-8">

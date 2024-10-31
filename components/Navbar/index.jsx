@@ -27,7 +27,7 @@ const Navbar = () => {
 						title="John Doe"
 						className="font-thin hover:text-teal-400"
 					>
-						Personal Portfolio
+						FullStack MERN Dev
 					</a>
 				</h2>
 			</div>

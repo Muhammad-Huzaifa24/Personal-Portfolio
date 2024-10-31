@@ -20,7 +20,7 @@ const Works = () => {
 				Digital Explorers is a knowledge exchange initative between 2 buzzing
 				ICT, offering.
 			</p>
-			<div className="grid grid-cols-1 gap-0 lg:grid-cols-3 sm:grid-cols-2 sm:gap-4">
+			<div className="grid grid-cols-1 gap-5 lg:grid-cols-3 sm:grid-cols-2 sm:gap-4">
 				{works
 					? works.map((work, index) => (
 							<div
