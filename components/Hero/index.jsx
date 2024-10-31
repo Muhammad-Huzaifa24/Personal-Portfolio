@@ -58,12 +58,14 @@ const Hero = () => {
 							target="_blank"
 							href="https://github.com/Muhammad-Huzaifa24"
 							className="text-teal-500 text-md ease-in-out duration-150 hover:text-white"
+							rel="noreferrer"
 						>
 							<FiGithub />
 						</a>
 					</li>
 					<li title="LinkedIn">
 						<a
+							rel="noreferrer"
 							target="_blank"
 							href="https://www.linkedin.com/in/muhammad-huzaifa-569794290/"
 							className="text-teal-500 text-md ease-in-out duration-150 hover:text-white"

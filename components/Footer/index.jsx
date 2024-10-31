@@ -19,6 +19,7 @@ const Footer = () => {
 							target="_blank"
 							href="https://www.linkedin.com/in/muhammad-huzaifa-569794290/"
 							className="ease-in-out duration-150 hover:text-teal-500"
+							rel="noreferrer"
 						>
 							<FaLinkedinIn />
 						</a>
@@ -29,6 +30,7 @@ const Footer = () => {
 						title="GitHub"
 					>
 						<a
+							rel="noreferrer"
 							target="_blank"
 							href="https://github.com/Muhammad-Huzaifa24"
 							className="ease-in-out duration-150 hover:text-teal-500"
