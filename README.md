@@ -1,4 +1,5 @@
 # Software Developer Portfolio :100:
+
 A responsive and open source portfolio for software developers (Next.js & Tailwind CSS version).
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
@@ -8,15 +9,19 @@ A responsive and open source portfolio for software developers (Next.js & Tailwi
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Website Screenshot
+
 <img src="./Software-Developer-Portfolio-Screenshot.png" alt="Software-Developer-Portfolio-Screenshot" />
 
 ## Install Dependencies:
+
 First install the needed dependencies:
+
 ```bash
 npm install
 ```
 
 ## Getting Started
+
 Run the development server:
 
 ```bash
