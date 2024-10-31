@@ -60,7 +60,7 @@ const Contact = () => {
 				</ul>
 
 				<div className="mt-10 sm:mt-0">
-					<h2 className="text-2xl text-teal-500 font-bold mb-2 sm:text-3xl">
+					<h2 className="text-1xl text-teal-500 font-bold mb-2 sm:text-3xl">
 						Start project?
 					</h2>
 					<h3 className="text-sm text-gray-400 sm:text-xl">
