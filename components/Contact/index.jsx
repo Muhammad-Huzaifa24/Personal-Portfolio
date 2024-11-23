@@ -19,6 +19,7 @@ const Contact = () => {
 						title="GitHub"
 					>
 						<a
+							rel="noreferrer"
 							target="_blank"
 							href="https://github.com/Muhammad-Huzaifa24"
 							className="flex gap-2 justify-start items-center w-max ease-in-out duration-150 hover:text-teal-500"
@@ -35,6 +36,7 @@ const Contact = () => {
 							target="_blank"
 							href="https://www.linkedin.com/in/muhammad-huzaifa-569794290/"
 							className="flex gap-2 justify-start items-center w-max ease-in-out duration-150 hover:text-teal-500"
+							rel="noreferrer"
 						>
 							<FaLinkedinIn />
 							<span className="text-sm font-initial">
