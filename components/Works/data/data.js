@@ -123,6 +123,13 @@ const data = [
 			"https://github.com/Muhammad-Huzaifa24/BCSF20M024-EAD-Project-Student-Interest-System",
 		is_deployed: false,
 	},
+	{
+		id: 8,
+		image_url: "",
+		description: "This project will be Live soon",
+		deploye_url: "",
+		is_deployed: false,
+	},
 ];
 
 export default data;

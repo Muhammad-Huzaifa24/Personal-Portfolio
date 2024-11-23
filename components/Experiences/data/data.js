@@ -49,6 +49,8 @@
 // 	},
 // ];
 
+import vsLogo from "../../../public/vs-logo.jpg";
+import buggcyLogo from "../../../public/buggcy-logo.png";
 const data = [
 	{
 		id: 1,
@@ -57,6 +59,16 @@ const data = [
 		company: "Buggcy",
 		description:
 			"As a Trainee MERN Stack Developer at Buggcy for 3 months, I gained hands-on experience in developing full-stack applications with MongoDB, Express.js, React, and Node.js. I collaborated with my team on projects, enhancing my skills and learning best industry practices.",
+		photo: buggcyLogo,
+	},
+	{
+		id: 2,
+		year: "10/24 - Present",
+		job_title: "MERN Stack Developer Intern",
+		company: "Viral Square",
+		description:
+			"Currnely working onsite as MERN Intern@ViralSquare. Learning and gaining experience from Industry experts",
+		photo: vsLogo,
 	},
 ];
 
