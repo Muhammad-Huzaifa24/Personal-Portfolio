@@ -1,5 +1,12 @@
 import { useState } from "react";
 import styles from "../../styles/Navbar.module.css";
+import {
+	FaCode,
+	FaBriefcase,
+	FaProjectDiagram,
+	FaEnvelope,
+	FaDownload,
+} from "react-icons/fa";
 
 const Navbar = () => {
 	let [menuOpen, SetMenuOpen] = useState(false);
@@ -24,10 +31,11 @@ const Navbar = () => {
 				<h2 className="text-2xl text-white font-thin font-sans">
 					<a
 						href=""
-						title="John Doe"
-						className="font-thin hover:text-teal-400"
+						title="Muhmmad Huzaifa Khawar"
+						className="flex items-center font-thin hover:text-teal-400"
 					>
-						FULL STACK DEV
+						<FaCode className="inline mr-2" />
+						FULL STACK DEVELOPER
 					</a>
 				</h2>
 			</div>
@@ -43,9 +51,10 @@ const Navbar = () => {
 					>
 						<a
 							href="#experiences"
-							className=" text-1xs text-white font-semibold ease-in-out duration-150 relative inline-block hover:text-teal-400"
+							className="group flex items-center text-1xs text-white font-semibold ease-in-out duration-150 relative  hover:text-teal-400"
 							onClick={() => closeMenu()}
 						>
+							<FaBriefcase className="group-hover:text-white inline-block mr-2 text-teal-400" />
 							<span className="relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-teal-400 after:transition-all after:duration-300 after:ease-in-out hover:after:w-full">
 								Experiences
 							</span>
@@ -57,9 +66,10 @@ const Navbar = () => {
 					>
 						<a
 							href="#projects"
-							className="text-1xs text-white font-semibold ease-in-out duration-150 relative inline-block hover:text-teal-400"
+							className="group flex items-center text-1xs text-white font-semibold ease-in-out duration-150 relative hover:text-teal-400"
 							onClick={() => closeMenu()}
 						>
+							<FaProjectDiagram className="group-hover:text-white inline-block mr-2 text-teal-400" />
 							<span className="relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-teal-400 after:transition-all after:duration-300 after:ease-in-out hover:after:w-full">
 								Projects
 							</span>
@@ -71,11 +81,28 @@ const Navbar = () => {
 					>
 						<a
 							href="#contact"
-							className="font-family-poppins text-1xs text-white font-semibold ease-in-out duration-150 relative inline-block hover:text-teal-400"
+							className="group flex items-center font-family-poppins text-1xs text-white font-semibold ease-in-out duration-150 relative  hover:text-teal-400"
 							onClick={() => closeMenu()}
 						>
+							<FaEnvelope className="group-hover:text-white inline-block mr-2 text-teal-400" />
 							<span className="relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-teal-400 after:transition-all after:duration-300 after:ease-in-out hover:after:w-full">
 								Contact
+							</span>
+						</a>
+					</li>
+					<li
+						className="mb-4 mx-0 sm:mb-0 sm:mx-3"
+						title="Download CV"
+					>
+						<a
+							href="/assets/cv.pdf"
+							download="Muhammad-Huzaifa.pdf"
+							className="group flex items-center font-family-poppins text-1xs text-white font-semibold ease-in-out duration-150 relative  hover:text-teal-400"
+							// onClick={() => closeMenu()}
+						>
+							<FaDownload className="group-hover:text-white inline-block mr-2 text-teal-400" />
+							<span className="relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-teal-400 after:transition-all after:duration-300 after:ease-in-out hover:after:w-full">
+								Download CV
 							</span>
 						</a>
 					</li>

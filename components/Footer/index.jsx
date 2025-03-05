@@ -78,12 +78,12 @@ const Footer = () => {
 					</li>
 				</ul>
 				<h5 className="text-white font-initial text-sm">
-					&copy; 2024 - Muhammad. All Rights Reserved.
+					&copy; 2025 - Muhammad. All Rights Reserved.
 				</h5>
 			</div>
 			<div className="py-8 pt-0 px-2">
 				<h5 className="text-white text-sm text-center leading-6">
-					&copy; 2024 - Made with
+					&copy; 2025 - Made with
 					{"  "}
 					<a
 						href="https://nextjs.org/"

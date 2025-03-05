@@ -52,9 +52,19 @@
 const data = [
 	{
 		id: 1,
+		year: "10/24 - present",
+		job_title: "ASE - MERN Stack Developer",
+		company: "Viral Square",
+		logo: "/assets/vs.png",
+		description:
+			"I learned so much during my probation period at Viral Square, especially in the MERN stack. I gained hands-on experience in developing full-stack applications with MongoDB, Express.js, React, and Node.js. I worked on multiple projects, such as FAM and PinTv, and learned best practices for coding, industry standards, and efficient workflows. My time at Viral Square helped me improve my skills and become a better developer, working collaboratively with my team to deliver high-quality projects.",
+	},
+	{
+		id: 2,
 		year: "07/24 - 10/24",
-		job_title: "Trainee MERN Stack Developer",
+		job_title: "MERN Stack Intern",
 		company: "Buggcy",
+		logo: "/assets/buggcy.png",
 		description:
 			"As a Trainee MERN Stack Developer at Buggcy for 3 months, I gained hands-on experience in developing full-stack applications with MongoDB, Express.js, React, and Node.js. I collaborated with my team on projects, enhancing my skills and learning best industry practices.",
 	},

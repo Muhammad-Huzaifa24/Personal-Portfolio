@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image.js";
 
 // Experiences Data
 import experiences from "./data/data.js";
@@ -21,7 +22,14 @@ const Experiences = () => {
 								className="bg-cyan-900 p-4 rounded hover:bg-cyan-800 relative"
 								title={`${experience.job_title} @${experience.company}`}
 							>
-								<b className="text-teal-500 text-sm bg-white py-1 px-2 rounded absolute left-3 -top-2 hover:bg-teal-500 hover:text-white">
+								<b className="border flex items-center text-teal-500 text-sm bg-white py-1 px-2 rounded absolute left-3 -top-2 hover:bg-teal-500 hover:text-white">
+									<Image
+										src={experience.logo}
+										width={35}
+										height={35}
+										alt="company logo"
+										className="mr-2 rounded-md"
+									></Image>
 									{experience.company}
 								</b>
 								<h2 className="mt-4 mb-2 text-sm text-right font-bold text-teal-500">
