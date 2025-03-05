@@ -30,10 +30,10 @@ const Footer = () => {
 						title="GitHub"
 					>
 						<a
-							rel="noreferrer"
 							target="_blank"
 							href="https://github.com/Muhammad-Huzaifa24"
 							className="ease-in-out duration-150 hover:text-teal-500"
+							rel="noreferrer"
 						>
 							<FaGithub />
 						</a>
