@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 
 const Navbar = () => {
-	const [menuOpen, SetMenuOpen] = useState(false);
+	let [menuOpen, SetMenuOpen] = useState(false);
 
 	const closeMenu = () => {
 		if (!menuOpen) {
