@@ -33,7 +33,7 @@ const Works = () => {
 								{work.id === 8 ? (
 									<div className="flex justify-center items-center h-full">
 										<h2 className="text-xl text-white font-bold">
-											Project will be live soon
+											More projects coming soon...
 										</h2>
 									</div>
 								) : (

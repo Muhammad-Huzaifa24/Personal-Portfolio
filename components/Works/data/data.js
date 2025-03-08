@@ -126,7 +126,7 @@ const data = [
 	{
 		id: 8,
 		image_url: "",
-		description: "This project will be Live soon",
+		description: "MORE PROJECTS TO BE ADDED SOON!",
 		deploye_url: "",
 		is_deployed: false,
 	},
