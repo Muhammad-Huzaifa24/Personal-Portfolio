@@ -30,7 +30,7 @@ const Works = () => {
 								title={`${work.work_title} - ${work.genre}`}
 								className="bg-cyan-900 rounded-lg p-4 max-w-4xl m-auto mb-4 w-full grid grid-cols-1 gap-0 ease-in-out duration-150 hover:bg-cyan-800 sm:mb-0 h-full"
 							>
-								{work.id === 8 ? (
+								{work.id === 9 ? (
 									<div className="flex justify-center items-center h-full">
 										<h2 className="text-xl text-white font-bold">
 											More projects coming soon...
