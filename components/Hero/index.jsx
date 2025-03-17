@@ -22,7 +22,7 @@ const Hero = () => {
 				React.js, MongoDB, NodeJS, ExpressJS Restful APIs.., I have been working
 				on the web for around 1+ years building Youtube/learning projects.
 			</p>
-			<div className="my-7 flex sm:justify-start justify-center items-center gap-6 flex-wrap">
+			<div className="my-7 flex sm:justify-start justify-center items-center gap-2 flex-wrap">
 				<button
 					className="bg-teal-500 py-2 px-4 font-semibold text-white border-2 border-teal-500 rounded-md ease-in-out duration-150 hover:text-white hover:bg-transparent hover:border-white"
 					title="View Resume"
