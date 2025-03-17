@@ -38,7 +38,7 @@ const Experiences = () => {
 								<h3 className="font-semibold text-2xl text-white">
 									{experience.job_title}
 								</h3>
-								<p className="text-left mt-2 leading-6 text-sm text-gray-200 text-justify">
+								<p className="mt-2 leading-6 text-sm text-gray-200 text-justify">
 									{experience.description}
 								</p>
 							</div>

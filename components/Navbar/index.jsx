@@ -20,27 +20,27 @@ const Navbar = () => {
 	return (
 		<>
 			<AnimatePresence>
-			{showAlert && (
-				<motion.div
-					initial={{ y: -50, opacity: 0 }} // Start from above
-					animate={{ y: 0, opacity: 1 }} // Slide down smoothly
-					exit={{ y: -50, opacity: 0 }} // Slide up when closing
-					transition={{ duration: 1, ease: "easeInOut" }}
-					style={{ zIndex: 60 }}
-					className="fixed top-0 left-5 right-5 lg:left-5 md:left-1/2 md:transform md:-translate-x-1/2 
-                    bg-teal-500 text-white px-4 py-4 rounded-md shadow-lg text-sm md:w-1/2 lg:w-auto 
-                    flex justify-between items-center mt-4"
-				>
-					<span>🚀 Check out my LATEST Project! 🎉</span>
-					<button
-						className="text-red-800 hover:text-white font-bold text-base"
-						onClick={() => setShowAlert(false)}
+				{showAlert && (
+					<motion.div
+						initial={{ y: -50, opacity: 0 }} // Start from above
+						animate={{ y: 0, opacity: 1 }} // Slide down smoothly
+						exit={{ y: -50, opacity: 0 }} // Slide up when closing
+						transition={{ duration: 1, ease: "easeInOut" }}
+						style={{ zIndex: 60 }}
+						className="fixed top-0 left-5 right-5 lg:left-5 md:left-1/2 md:transform md:-translate-x-1/2 
+						bg-teal-500 text-white px-4 py-4 rounded-md shadow-lg text-sm md:w-1/2 lg:w-auto 
+						flex justify-between items-center mt-4"
 					>
-						✖
-					</button>
-				</motion.div>
-			)}
-		</AnimatePresence>
+						<span>🚀 Check out my LATEST Project! 🎉</span>
+						<button
+							className="text-red-800 hover:text-white font-bold text-base"
+							onClick={() => setShowAlert(false)}
+						>
+							✖
+						</button>
+					</motion.div>
+				)}
+			</AnimatePresence>
 			<header
 				className={`py-3 px-2 flex justify-between items-center flex-wrap lg:py-7 ${styles.header} ${
 					menuOpen ? styles.open : ""
@@ -62,7 +62,7 @@ const Navbar = () => {
 				{/* Menu */}
 				<nav>
 					<ul
-						className={`absolute left-0 top-0 m-0 py-20 pt-16 px-5 bg-[rgb(42_42_42)] z-40 w-full 
+						className={`absolute left-0 top-0 m-0 px-5 bg-[rgb(42_42_42)] z-40 w-full 
 									rounded-br-3xl rounded-bl-3xl md:w-auto md:bg-transparent md:flex 
 									transition-all duration-500 ease-in-out transform overflow-hidden 
 									${menuOpen ? "max-h-[45vh] opacity-100 translate-y-0" : "max-h-0 opacity-0 -translate-y-10"} 
