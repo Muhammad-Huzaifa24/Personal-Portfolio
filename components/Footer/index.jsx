@@ -7,7 +7,7 @@ const Footer = () => {
 	return (
 		<div className="px-2">
 			<div className="py-4 border-b border-b-gray-800 flex justify-between items-center max-w-6xl m-auto">
-				<h2 className="text-md text-white font-semibold">
+				<h2 className="text-base text-white font-semibold">
 					<a href="">Muhammd Huzaifa Khawar</a>
 				</h2>
 				<ul className="flex justify-center items-center gap-3">

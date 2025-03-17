@@ -19,10 +19,10 @@ const Works = () => {
 				#Latest Works
 			</h1>
 			<p className="text-sm text-teal-500 font-semibold mt-4 mb-8 leading-6">
-				Digital Explorers is a knowledge exchange initative between 2 buzzing
-				ICT, offering.
+				Explore my latest projects, where creativity meets technology to build innovative and impactful solutions.
+
 			</p>
-			<div className="grid grid-cols-1 gap-0 lg:grid-cols-3 sm:grid-cols-2 sm:gap-4">
+			<div className="grid grid-cols-1 gap-3 lg:grid-cols-3 sm:grid-cols-2 sm:gap-4">
 				{works
 					? works.map((work, index) => (
 							<div
@@ -49,8 +49,13 @@ const Works = () => {
 											<h2 className="text-2xl text-white font-bold my-5 mb-2">
 												{work.work_title}
 											</h2>
+											{work.id === 8 && (
+											<span className="bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded-full mb-2">
+													Latest
+												</span>
+											)}
 											<b className="text-teal-500 mb-2">⎯⎯ {work.genre}</b>
-											<p className="text-gray-300 text-sm leading-6 m-0">
+											<p className="text-gray-300 text-sm leading-6 m-0 text-justify">
 												{work.description}
 											</p>
 											<button

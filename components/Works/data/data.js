@@ -45,6 +45,15 @@
 
 const data = [
 	{
+		id: 8,
+		work_title: "Full Stack ToDo App",
+		image_url: "https://res.cloudinary.com/dvycqni2r/image/upload/v1742198782/to-dos-app_bzda4v.png",
+		description: "To-Do Application is a full-stack MERN project that enables users to manage tasks efficiently. It features JWT authentication for secure user access and React Query for optimized data fetching and state management. Users can create, update, delete, and mark tasks as complete, ensuring a seamless task-tracking experience. The backend is built with Node.js, Express, and MongoDB, while the frontend leverages React for a dynamic UI.",
+		genre: "Full Stack Development",
+		deploye_url: "https://your-todos-omega.vercel.app/",
+		is_deployed: true,
+	},
+	{
 		id: 1,
 		image_url:
 			"https://res.cloudinary.com/dvycqni2r/image/upload/v1730353070/user-auth-app_xajed2.png",
@@ -122,15 +131,6 @@ const data = [
 		deploye_url:
 			"https://github.com/Muhammad-Huzaifa24/BCSF20M024-EAD-Project-Student-Interest-System",
 		is_deployed: false,
-	},
-	{
-		id: 8,
-		work_title: "Full Stack ToDo App",
-		image_url: "https://res.cloudinary.com/dvycqni2r/image/upload/v1742198782/to-dos-app_bzda4v.png",
-		description: "To-Do Application is a full-stack MERN project that enables users to manage tasks efficiently. It features JWT authentication for secure user access and React Query for optimized data fetching and state management. Users can create, update, delete, and mark tasks as complete, ensuring a seamless task-tracking experience. The backend is built with Node.js, Express, and MongoDB, while the frontend leverages React for a dynamic UI.",
-		genre: "Full Stack Development",
-		deploye_url: "https://your-todos-omega.vercel.app/",
-		is_deployed: true,
 	},
 	{
 		id: 9,

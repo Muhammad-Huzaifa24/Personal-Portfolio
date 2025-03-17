@@ -13,16 +13,16 @@ const Hero = () => {
 				<SiHey />
 				<span>I am</span>
 			</h2>
-			<h1 className="text-6xl font-semibold text-white sm:text-7xl">
+			<h1 className="text-2xl font-semibold text-white sm:text-7xl">
 				Muhammad Huzaifa Khawar
 			</h1>
-			<p className="text-md text-gray-400 leading-7 my-4 sm:text-lg sm:leading-8">
+			<p className=" text-gray-400 leading-7 my-4 sm:text-lg sm:leading-8 text-justify">
 				Cuber and Self-Taught Front-end Software Developer, I enjoy building
 				responsive web apps & designs using HTML5, CSS3, JavaScript, Next.js,
 				React.js, MongoDB, NodeJS, ExpressJS Restful APIs.., I have been working
 				on the web for around 1+ years building Youtube/learning projects.
 			</p>
-			<div className="my-7 flex justify-start items-center gap-4 flex-wrap">
+			<div className="my-7 flex sm:justify-start justify-center items-center gap-6 flex-wrap">
 				<button
 					className="bg-teal-500 py-2 px-4 font-semibold text-white border-2 border-teal-500 rounded-md ease-in-out duration-150 hover:text-white hover:bg-transparent hover:border-white"
 					title="View Resume"
