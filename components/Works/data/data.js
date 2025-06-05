@@ -45,8 +45,17 @@
 
 const data = [
 	{
+		id: 9,
+		work_title: "Chat Buddies UI",
+		image_url: "https://res.cloudinary.com/dvycqni2r/image/upload/v1749111593/chat-buddies-ui_cotbr4.jpg",
+		description: "Chat Buddies UI is a frontend-only React project inspired by WhatsApp, designed to enhance my frontend development skills. It uses Redux for global state management and Chakra UI for a responsive, modern interface. The project is a learning ground where I'm continuously adding new features, focusing on building a polished user experience and deepening my understanding of React, state management, and UI libraries.",
+		genre: "Frontend",
+		deploye_url: "https://chat-app-ui-olive.vercel.app/",
+		is_deployed: true,
+	},
+	{
 		id: 8,
-		work_title: "Full Stack ToDo App",
+		work_title: "ToDo App",
 		image_url: "https://res.cloudinary.com/dvycqni2r/image/upload/v1742198782/to-dos-app_bzda4v.png",
 		description: "To-Do Application is a full-stack MERN project that enables users to manage tasks efficiently. It features JWT authentication for secure user access and React Query for optimized data fetching and state management. Users can create, update, delete, and mark tasks as complete, ensuring a seamless task-tracking experience. The backend is built with Node.js, Express, and MongoDB, while the frontend leverages React for a dynamic UI.",
 		genre: "Full Stack Development",
@@ -57,7 +66,7 @@ const data = [
 		id: 1,
 		image_url:
 			"https://res.cloudinary.com/dvycqni2r/image/upload/v1730353070/user-auth-app_xajed2.png",
-		work_title: "Full-Stack User Authentication App",
+		work_title: "Auth App",
 		description:
 			"A robust user authentication application with full profile management capabilities. Users can securely create accounts, log in, view and edit their profiles, change passwords, and reset forgotten passwords. Additionally, users can view profiles of other logged-in users. The app includes secure, encrypted data handling and responsive design for seamless use across devices.",
 		genre: "Full Stack Development",
@@ -133,7 +142,7 @@ const data = [
 		is_deployed: false,
 	},
 	{
-		id: 9,
+		id: 10,
 		image_url: "",
 		description: "MORE PROJECTS TO BE ADDED SOON!",
 		genre: "",
