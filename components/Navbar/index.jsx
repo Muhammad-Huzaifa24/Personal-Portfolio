@@ -54,7 +54,7 @@ const Navbar = () => {
 							className="flex items-center font-thin hover:text-teal-400"
 						>
 							<FaCode className="inline mr-2" />
-							FULL STACK DEVELOPER
+							Software Engineer
 						</a>
 					</p>
 				</div>
