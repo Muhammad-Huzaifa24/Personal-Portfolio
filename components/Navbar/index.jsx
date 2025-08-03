@@ -7,6 +7,7 @@ import {
 	FaEnvelope,
 	FaDownload,
 } from "react-icons/fa";
+import { IoMdClose } from "react-icons/io";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
@@ -65,7 +66,7 @@ const Navbar = () => {
 						className={`absolute left-0 top-0 m-0 px-5 bg-[rgb(42_42_42)] z-40 w-full 
 									rounded-br-3xl rounded-bl-3xl md:w-auto md:bg-transparent md:flex 
 									transition-all duration-500 ease-in-out transform overflow-hidden 
-									${menuOpen ? "max-h-[45vh] opacity-100 translate-y-0" : "max-h-0 opacity-0 -translate-y-10"} 
+									${menuOpen ? "max-h-[45vh] opacity-100 translate-y-0 z-[999] p-5" : "max-h-0 opacity-0 -translate-y-10"} 
 									md:flex md:static md:left-auto md:top-auto md:max-h-none md:opacity-100 md:translate-y-0`}
 					>
 						<li className="mb-4 mt-2 sm:mb-0 sm:mt-0 sm:mx-3" title="Experiences">
@@ -121,7 +122,7 @@ const Navbar = () => {
 
 				{/* Hamburger Icon */}
 				<div
-					className={`z-50 flex flex-col justify-center items-center md:hidden cursor-pointer ${
+					className={`z-[9999] flex flex-col justify-center items-center md:hidden cursor-pointer ${
 						styles.hamburger
 					} ${menuOpen ? styles.open : ""}`}
 					onClick={() => setMenuOpen(!menuOpen)}
