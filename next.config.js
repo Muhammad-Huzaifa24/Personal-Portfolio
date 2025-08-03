@@ -1,9 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	reactStrictMode: true,
-	swcMinify: false,
+	// swcMinify: false,
 	images: {
-		domains: ["res.cloudinary.com"],
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: 'res.cloudinary.com',
+			},
+		],
 	},
 };
 

@@ -28,7 +28,7 @@ const Hero = () => {
 					title="View Resume"
 				>
 					<a
-						href="/resume.pdf"
+						href={process.env.NEXT_PUBLIC_RESUME_URL}
 						target="_blank"
 						rel="noopener noreferrer"
 						className="flex justify-start items-center gap-1"

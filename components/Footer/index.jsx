@@ -1,7 +1,8 @@
 import React from "react";
 
 // React Icons
-import { FaLinkedinIn, FaGithub } from "react-icons/fa";
+import { FaLinkedinIn, FaGithub, FaTwitter, FaInstagram, FaFacebookF } from "react-icons/fa";
+import { SiX } from "react-icons/si"; // X (Twitter)
 
 const Footer = () => {
 	return (
@@ -36,6 +37,45 @@ const Footer = () => {
 							rel="noreferrer"
 						>
 							<FaGithub />
+						</a>
+					</li>
+					<li
+						className="text-white text-sm"
+						title="Facebook"
+					>
+						<a
+							target="_blank"
+							href="https://www.facebook.com/huzaifa.khawar.73"
+							className="ease-in-out duration-150 hover:text-teal-500"
+							rel="noreferrer"
+						>
+							<FaFacebookF />
+						</a>
+					</li>
+					<li
+						className="text-white text-sm"
+						title="Twitter"
+					>
+						<a
+							target="_blank"
+							href="https://x.com/WorldLenns"
+							className="ease-in-out duration-150 hover:text-teal-500"
+							rel="noreferrer"
+						>
+							<SiX />
+						</a>
+					</li>
+					<li
+						className="text-white text-sm"
+						title="Instagram"
+					>
+						<a
+							target="_blank"
+							href="https://instagram.com/huzaifyyy__24"
+							className="ease-in-out duration-150 hover:text-teal-500"
+							rel="noreferrer"
+						>
+							<FaInstagram />
 						</a>
 					</li>
 				</ul>
@@ -81,7 +121,7 @@ const Footer = () => {
 					&copy; 2025 - Muhammad. All Rights Reserved.
 				</h5>
 			</div>
-			<div className="py-8 pt-0 px-2">
+			{/* <div className="py-8 pt-0 px-2">
 				<h5 className="text-white text-sm text-center leading-6">
 					&copy; 2025 - Made with
 					{"  "}
@@ -123,7 +163,7 @@ const Footer = () => {
 					</a>
 					.
 				</h5>
-			</div>
+			</div> */}
 		</div>
 	);
 };

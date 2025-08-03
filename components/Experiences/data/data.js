@@ -52,15 +52,24 @@
 const data = [
 	{
 		id: 1,
-		year: "02/25 - present",
+		year: "02/25 - 04/25",
+		job_title: "Software Engineer",
+		company: "TechClan",
+		logo: "/assets/tech-clan.png",
+		description:
+			"I have been currently working as Software Engineer at TechClan",
+	},
+	{
+		id: 2,
+		year: "02/25 - 04/25",
 		job_title: "ASE - MERN Stack",
 		company: "Viral Square",
 		logo: "/assets/vs.png",
 		description:
-			"I have been currently working as an Associate Software Engineer at Viral Square",
+			"I worked for 2 months as an Associate Software Engineer at Viral Square, where I learned a lot and contributed to projects like PinTV and FootballAroundMe. I had the opportunity to work under excellent mentorship from seniors, making it a valuable and memorable experience.",
 	},
 	{
-		id: 2,
+		id: 3,
 		year: "11/24 - 02/25",
 		job_title: "MERN Stack Intern",
 		company: "Viral Square",
@@ -69,7 +78,7 @@ const data = [
 			"I learned so much during my probation period at Viral Square, especially in the MERN stack. I gained hands-on experience in developing full-stack applications with MongoDB, Express.js, React, and Node.js. I worked on multiple projects, such as FAM and PinTv, and learned best practices for coding, industry standards, and efficient workflows. My time at Viral Square helped me improve my skills and become a better developer, working collaboratively with my team to deliver high-quality projects.",
 	},
 	{
-		id: 3,
+		id: 4,
 		year: "07/24 - 10/24",
 		job_title: "MERN Stack Intern",
 		company: "Buggcy",
