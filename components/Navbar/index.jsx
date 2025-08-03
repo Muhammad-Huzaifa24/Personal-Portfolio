@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 import { motion, AnimatePresence } from "framer-motion";
-
+import {RESUME_DOWNLOAD_LINK} from "../../constants"
 const Navbar = () => {
 	const [menuOpen, setMenuOpen] = useState(false);
 	const [showAlert, setShowAlert] = useState(true); // Show alert on page load
@@ -27,7 +27,7 @@ const Navbar = () => {
 						animate={{ y: 0, opacity: 1 }} // Slide down smoothly
 						exit={{ y: -50, opacity: 0 }} // Slide up when closing
 						transition={{ duration: 1, ease: "easeInOut" }}
-						style={{ zIndex: 60 }}
+						style={{ zIndex: 99999 }}
 						className="fixed top-0 left-5 right-5 lg:left-5 md:left-1/2 md:transform md:-translate-x-1/2 
 						bg-teal-500 text-white px-4 py-4 rounded-md shadow-lg text-sm md:w-1/2 lg:w-auto 
 						flex justify-between items-center mt-4"
@@ -107,8 +107,8 @@ const Navbar = () => {
 						</li>
 						<li className="mb-4 mx-0 sm:mb-0 sm:mx-3" title="Download CV">
 							<a
-								href="/assets/cv.pdf"
-								download="Muhammad-Huzaifa.pdf"
+								href={RESUME_DOWNLOAD_LINK}
+								download="Muhammad-Huzaifa-resume.pdf"
 								className="group flex items-center text-1xs text-white font-semibold ease-in-out duration-150 relative hover:text-teal-400"
 							>
 								<FaDownload className="group-hover:text-white inline-block mr-2 text-teal-400" />
