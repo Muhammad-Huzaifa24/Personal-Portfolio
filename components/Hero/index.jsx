@@ -3,8 +3,9 @@ import React from "react";
 // React Icons
 import { SiHey } from "react-icons/si";
 import { RiProfileLine, RiContactsBookLine } from "react-icons/ri";
-import { FiLinkedin, FiGithub } from "react-icons/fi";
-
+import { FaLinkedinIn, FaGithub, FaInstagram, FaFacebookF } from "react-icons/fa";
+import { SiX } from "react-icons/si";
+import {SOCIAL_LINK, RESUME_LINK} from "../../constants"
 const Hero = () => {
 	return (
 		<div className="py-12 px-2 max-w-4xl m-auto sm:pt-24">
@@ -28,7 +29,7 @@ const Hero = () => {
 					title="View Resume"
 				>
 					<a
-						href={process.env.NEXT_PUBLIC_RESUME_URL}
+						href={RESUME_LINK}
 						target="_blank"
 						rel="noopener noreferrer"
 						className="flex justify-start items-center gap-1"
@@ -57,20 +58,50 @@ const Hero = () => {
 						<a
 							target="_blank"
 							rel="noreferrer"
-							href="https://github.com/Muhammad-Huzaifa24"
+							href={SOCIAL_LINK.github}
 							className="text-teal-500 text-md ease-in-out duration-150 hover:text-white"
 						>
-							<FiGithub />
+							<FaGithub />
 						</a>
 					</li>
 					<li title="LinkedIn">
 						<a
 							target="_blank"
-							href="https://www.linkedin.com/in/muhammad-huzaifa-569794290/"
+							href={SOCIAL_LINK.linkedIn}
 							className="text-teal-500 text-md ease-in-out duration-150 hover:text-white"
 							rel="noreferrer"
 						>
-							<FiLinkedin />
+							<FaLinkedinIn />
+						</a>
+					</li>
+					<li title="Facebook">
+						<a
+							target="_blank"
+							href={SOCIAL_LINK.facebook}
+							className="text-teal-500 text-md ease-in-out duration-150 hover:text-white"
+							rel="noreferrer"
+						>
+							<FaFacebookF />
+						</a>
+					</li>
+					<li title="Instagram">
+						<a
+							target="_blank"
+							href={SOCIAL_LINK.instagram}
+							className="text-teal-500 text-md ease-in-out duration-150 hover:text-white"
+							rel="noreferrer"
+						>
+							<FaInstagram />
+						</a>
+					</li>
+					<li title="Twitter">
+						<a
+							target="_blank"
+							href={SOCIAL_LINK.twitter}
+							className="text-teal-500 text-md ease-in-out duration-150 hover:text-white"
+							rel="noreferrer"
+						>
+							<SiX />
 						</a>
 					</li>
 				</ul>

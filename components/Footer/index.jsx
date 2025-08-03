@@ -1,9 +1,9 @@
 import React from "react";
 
 // React Icons
-import { FaLinkedinIn, FaGithub, FaTwitter, FaInstagram, FaFacebookF } from "react-icons/fa";
+import { FaLinkedinIn, FaGithub, FaInstagram, FaFacebookF } from "react-icons/fa";
 import { SiX } from "react-icons/si"; // X (Twitter)
-
+import {SOCIAL_LINK} from "../../constants"
 const Footer = () => {
 	return (
 		<div className="px-2">
@@ -18,7 +18,7 @@ const Footer = () => {
 					>
 						<a
 							target="_blank"
-							href="https://www.linkedin.com/in/muhammad-huzaifa-569794290/"
+							href={SOCIAL_LINK.linkedIn}
 							className="ease-in-out duration-150 hover:text-teal-500"
 							rel="noreferrer"
 						>
@@ -32,7 +32,7 @@ const Footer = () => {
 					>
 						<a
 							target="_blank"
-							href="https://github.com/Muhammad-Huzaifa24"
+							href={SOCIAL_LINK.github}
 							className="ease-in-out duration-150 hover:text-teal-500"
 							rel="noreferrer"
 						>
@@ -45,7 +45,7 @@ const Footer = () => {
 					>
 						<a
 							target="_blank"
-							href="https://www.facebook.com/huzaifa.khawar.73"
+							href={SOCIAL_LINK.facebook}
 							className="ease-in-out duration-150 hover:text-teal-500"
 							rel="noreferrer"
 						>
@@ -58,7 +58,7 @@ const Footer = () => {
 					>
 						<a
 							target="_blank"
-							href="https://x.com/WorldLenns"
+							href={SOCIAL_LINK.twitter}
 							className="ease-in-out duration-150 hover:text-teal-500"
 							rel="noreferrer"
 						>
@@ -71,7 +71,7 @@ const Footer = () => {
 					>
 						<a
 							target="_blank"
-							href="https://instagram.com/huzaifyyy__24"
+							href={SOCIAL_LINK.instagram}
 							className="ease-in-out duration-150 hover:text-teal-500"
 							rel="noreferrer"
 						>
