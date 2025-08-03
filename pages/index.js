@@ -12,7 +12,7 @@ export default function Home() {
 	return (
 		<div className="p-2">
 			<Head>
-				<title>Muhammad - Software Developer</title>
+				<title>Muhammad - Software Engineer</title>
 				<meta
 					name="description"
 					content="Software developer portfolio using Next.js & Tailwind CSS."
