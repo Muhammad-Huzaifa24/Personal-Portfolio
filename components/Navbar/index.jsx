@@ -1,139 +1,109 @@
-import { useState } from "react";
-import styles from "../../styles/Navbar.module.css";
+import { Menu, Download, ArrowUpRight } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
 import {
-	FaCode,
-	FaBriefcase,
-	FaProjectDiagram,
-	FaEnvelope,
-	FaDownload,
-} from "react-icons/fa";
-import { IoMdClose } from "react-icons/io";
-import { motion, AnimatePresence } from "framer-motion";
-import {RESUME_DOWNLOAD_LINK} from "../../constants"
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { NAV_ITEMS, PERSONAL_INFO, RESUME_DOWNLOAD_LINK } from "../../constants";
+
 const Navbar = () => {
-	const [menuOpen, setMenuOpen] = useState(false);
-	const [showAlert, setShowAlert] = useState(true); // Show alert on page load
+  return (
+    <header className="sticky top-0 z-50 pt-4">
+      <div className="glass-panel flex items-center justify-between gap-4 rounded-full px-4 py-3 sm:px-6">
+        <a
+          href="#home"
+          className="flex min-w-0 items-center gap-3"
+          title={PERSONAL_INFO.name}
+        >
+          <span className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/6 text-sm font-semibold text-white shadow-[0_0_30px_rgba(29,205,254,0.16)]">
+            MH
+          </span>
+          <span className="min-w-0">
+            <span className="font-display block truncate text-sm font-semibold text-white sm:text-base">
+              {PERSONAL_INFO.name}
+            </span>
+            <span className="block truncate text-xs text-slate-300">
+              {PERSONAL_INFO.role}
+            </span>
+          </span>
+        </a>
 
-	const closeMenu = () => {
-		setMenuOpen(false);
-	};
+        <nav className="hidden items-center gap-2 md:flex">
+          {NAV_ITEMS.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="rounded-full px-4 py-2 text-sm font-medium text-slate-300 transition duration-200 hover:bg-white/8 hover:text-white"
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
 
-	return (
-		<>
-			<AnimatePresence>
-				{showAlert && (
-					<motion.div
-						initial={{ y: -50, opacity: 0 }} // Start from above
-						animate={{ y: 0, opacity: 1 }} // Slide down smoothly
-						exit={{ y: -50, opacity: 0 }} // Slide up when closing
-						transition={{ duration: 1, ease: "easeInOut" }}
-						style={{ zIndex: 99999 }}
-						className="fixed top-0 left-5 right-5 lg:left-5 md:left-1/2 md:transform md:-translate-x-1/2 
-						bg-teal-500 text-white px-4 py-4 rounded-md shadow-lg text-sm md:w-1/2 lg:w-auto 
-						flex justify-between items-center mt-4"
-					>
-						<span>🚀 Check out my LATEST Project! 🎉</span>
-						<button
-							className="text-red-800 hover:text-white font-bold text-base"
-							onClick={() => setShowAlert(false)}
-						>
-							✖
-						</button>
-					</motion.div>
-				)}
-			</AnimatePresence>
-			<header
-				className={`py-3 px-2 flex justify-between items-center flex-wrap lg:py-7 ${styles.header} ${
-					menuOpen ? styles.open : ""
-				}`}
-			>
-				<div className="z-50">
-					<p id="title" className=" text-white font-thin font-sans">
-						<a
-							href="#"
-							title="Muhammad Huzaifa Khawar"
-							className="flex items-center font-thin hover:text-teal-400"
-						>
-							<FaCode className="inline mr-2" />
-							Software Engineer
-						</a>
-					</p>
-				</div>
+        <div className="hidden md:block">
+          <Button
+            asChild
+            className="h-11 rounded-full border border-cyan-300/40 bg-cyan-300/14 px-4 text-white hover:bg-cyan-300/22"
+          >
+            <a
+              href={RESUME_DOWNLOAD_LINK}
+              download="Muhammad-Huzaifa-Resume.pdf"
+            >
+              Resume
+              <Download className="size-4" />
+            </a>
+          </Button>
+        </div>
 
-				{/* Menu */}
-				<nav>
-					<ul
-						className={`absolute left-0 top-0 m-0 px-5 bg-[rgb(42_42_42)] z-40 w-full 
-									rounded-br-3xl rounded-bl-3xl md:w-auto md:bg-transparent md:flex 
-									transition-all duration-500 ease-in-out transform overflow-hidden 
-									${menuOpen ? "max-h-[45vh] opacity-100 translate-y-0 z-[999] p-5" : "max-h-0 opacity-0 -translate-y-10"} 
-									md:flex md:static md:left-auto md:top-auto md:max-h-none md:opacity-100 md:translate-y-0`}
-					>
-						<li className="mb-4 mt-2 sm:mb-0 sm:mt-0 sm:mx-3" title="Experiences">
-							<a
-								href="#experiences"
-								className="group flex items-center text-1xs text-white font-semibold ease-in-out duration-150 relative hover:text-teal-400"
-								onClick={closeMenu}
-							>
-								<FaBriefcase className="group-hover:text-white inline-block mr-2 text-teal-400" />
-								<span className="relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-teal-400 after:transition-all after:duration-300 after:ease-in-out hover:after:w-full">
-									Experiences
-								</span>
-							</a>
-						</li>
-						<li className="mb-4 mx-0 sm:mb-0 sm:mx-3" title="Projects">
-							<a
-								href="#projects"
-								className="group flex items-center text-1xs text-white font-semibold ease-in-out duration-150 relative hover:text-teal-400"
-								onClick={closeMenu}
-							>
-								<FaProjectDiagram className="group-hover:text-white inline-block mr-2 text-teal-400" />
-								<span className="relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-teal-400 after:transition-all after:duration-300 after:ease-in-out hover:after:w-full">
-									Projects
-								</span>
-							</a>
-						</li>
-						<li className="mb-4 mx-0 sm:mb-0 sm:mx-3" title="Contact">
-							<a
-								href="#contact"
-								className="group flex items-center text-1xs text-white font-semibold ease-in-out duration-150 relative hover:text-teal-400"
-								onClick={closeMenu}
-							>
-								<FaEnvelope className="group-hover:text-white inline-block mr-2 text-teal-400" />
-								<span className="relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-teal-400 after:transition-all after:duration-300 after:ease-in-out hover:after:w-full">
-									Contact
-								</span>
-							</a>
-						</li>
-						<li className="mb-4 mx-0 sm:mb-0 sm:mx-3" title="Download CV">
-							<a
-								href={RESUME_DOWNLOAD_LINK}
-								download="Muhammad-Huzaifa-resume.pdf"
-								className="group flex items-center text-1xs text-white font-semibold ease-in-out duration-150 relative hover:text-teal-400"
-							>
-								<FaDownload className="group-hover:text-white inline-block mr-2 text-teal-400" />
-								<span className="relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-teal-400 after:transition-all after:duration-300 after:ease-in-out hover:after:w-full">
-									Download CV
-								</span>
-							</a>
-						</li>
-					</ul>
-				</nav>
+        <div className="md:hidden">
+          <Sheet>
+            <SheetTrigger asChild>
+              <button className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/6 text-white transition hover:bg-white/10">
+                <Menu className="size-5" />
+              </button>
+            </SheetTrigger>
+            <SheetContent className="border-l border-white/10 bg-slate-950/96 text-white">
+              <SheetHeader className="mb-8">
+                <SheetTitle className="font-display text-left text-white">
+                  Navigate
+                </SheetTitle>
+              </SheetHeader>
 
-				{/* Hamburger Icon */}
-				<div
-					className={`z-[9999] flex flex-col justify-center items-center md:hidden cursor-pointer ${
-						styles.hamburger
-					} ${menuOpen ? styles.open : ""}`}
-					onClick={() => setMenuOpen(!menuOpen)}
-				>
-					<span className="h-0.5 w-7 mb-1.5 bg-white transition-transform duration-300 ease-in-out transform origin-center"></span>
-					<span className="h-0.5 w-7 mb-1.5 bg-white transition-transform duration-300 ease-in-out transform origin-center"></span>
-					<span className="h-0.5 w-7 mb-1.5 bg-white transition-transform duration-300 ease-in-out transform origin-center"></span>
-				</div>
-			</header>
-		</>
-	);
+              <nav className="flex flex-col gap-3">
+                {NAV_ITEMS.map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-slate-200 transition hover:border-cyan-300/30 hover:bg-white/8 hover:text-white"
+                  >
+                    {item.label}
+                    <ArrowUpRight className="size-4" />
+                  </a>
+                ))}
+
+                <Button
+                  asChild
+                  className="mt-3 h-12 rounded-2xl border border-cyan-300/40 bg-cyan-300/14 text-white hover:bg-cyan-300/22"
+                >
+                  <a
+                    href={RESUME_DOWNLOAD_LINK}
+                    download="Muhammad-Huzaifa-Resume.pdf"
+                  >
+                    Download Resume
+                    <Download className="size-4" />
+                  </a>
+                </Button>
+              </nav>
+            </SheetContent>
+          </Sheet>
+        </div>
+      </div>
+    </header>
+  );
 };
 
 export default Navbar;

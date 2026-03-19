@@ -1,91 +1,60 @@
-// const data = [
-// 	{
-// 		id: 1,
-// 		year: 2021,
-// 		job_title: "Back-End Enginner",
-// 		company: "Nike",
-// 		description:
-// 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-// 	},
-// 	{
-// 		id: 2,
-// 		year: 2020,
-// 		job_title: "Software Enginner",
-// 		company: "Google Clouds",
-// 		description:
-// 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-// 	},
-// 	{
-// 		id: 3,
-// 		year: 2019,
-// 		job_title: "Full-Stack Developer",
-// 		company: "AWS",
-// 		description:
-// 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-// 	},
-// 	{
-// 		id: 4,
-// 		year: 2018,
-// 		job_title: "Front-End Developer",
-// 		company: "Netflix",
-// 		description:
-// 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-// 	},
-// 	{
-// 		id: 5,
-// 		year: 2017,
-// 		job_title: "Software Developer",
-// 		company: "Vercel",
-// 		description:
-// 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-// 	},
-// 	{
-// 		id: 6,
-// 		year: 2016,
-// 		job_title: "Front-End Enginner",
-// 		company: "Facebook",
-// 		description:
-// 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-// 	},
-// ];
-
 const data = [
-	{
-		id: 1,
-		year: "02/25 - 04/25",
-		job_title: "Software Engineer",
-		company: "TechClan",
-		logo: "/assets/tech-clan.png",
-		description:
-			"I have been currently working as Software Engineer at TechClan",
-	},
-	{
-		id: 2,
-		year: "02/25 - 04/25",
-		job_title: "ASE - MERN Stack",
-		company: "Viral Square",
-		logo: "/assets/vs.png",
-		description:
-			"I worked for 2 months as an Associate Software Engineer at Viral Square, where I learned a lot and contributed to projects like PinTV and FootballAroundMe. I had the opportunity to work under excellent mentorship from seniors, making it a valuable and memorable experience.",
-	},
-	{
-		id: 3,
-		year: "11/24 - 02/25",
-		job_title: "MERN Stack Intern",
-		company: "Viral Square",
-		logo: "/assets/vs.png",
-		description:
-			"I learned so much during my probation period at Viral Square, especially in the MERN stack. I gained hands-on experience in developing full-stack applications with MongoDB, Express.js, React, and Node.js. I worked on multiple projects, such as FAM and PinTv, and learned best practices for coding, industry standards, and efficient workflows. My time at Viral Square helped me improve my skills and become a better developer, working collaboratively with my team to deliver high-quality projects.",
-	},
-	{
-		id: 4,
-		year: "07/24 - 10/24",
-		job_title: "MERN Stack Intern",
-		company: "Buggcy",
-		logo: "/assets/buggcy.png",
-		description:
-			"As a Trainee MERN Stack Developer at Buggcy for 3 months, I gained hands-on experience in developing full-stack applications with MongoDB, Express.js, React, and Node.js. I collaborated with my team on projects, enhancing my skills and learning best industry practices.",
-	},
+  {
+    id: 1,
+    period: "Feb 2025 - Apr 2025",
+    job_title: "Software Engineer",
+    company: "TechClan",
+    logo: "/assets/tech-clan.png",
+    summary:
+      "Worked on production-facing web experiences with a focus on interface quality, maintainable frontend code, and smoother user journeys.",
+    highlights: [
+      "Contributed as a frontend-focused engineer inside a delivery team.",
+      "Helped shape responsive UI implementation and day-to-day product polish.",
+      "Strengthened collaboration habits around feedback, iteration, and shipping.",
+    ],
+  },
+  {
+    id: 2,
+    period: "Feb 2025 - Apr 2025",
+    job_title: "Associate Software Engineer - MERN Stack",
+    company: "Viral Square",
+    logo: "/assets/vs.png",
+    summary:
+      "Contributed to products like PinTV and FootballAroundMe while learning how to build faster inside a real product environment with strong mentorship.",
+    highlights: [
+      "Worked across MERN stack workflows in a team setting.",
+      "Learned delivery standards from senior engineers and product feedback loops.",
+      "Balanced implementation speed with cleaner structure and maintainability.",
+    ],
+  },
+  {
+    id: 3,
+    period: "Nov 2024 - Feb 2025",
+    job_title: "MERN Stack Intern",
+    company: "Viral Square",
+    logo: "/assets/vs.png",
+    summary:
+      "Built hands-on experience with MongoDB, Express, React, and Node.js while contributing to real product modules and improving development discipline.",
+    highlights: [
+      "Worked on full-stack product features during internship and probation.",
+      "Practiced production-oriented coding standards and collaborative workflows.",
+      "Gained confidence shipping features in React and Node-based projects.",
+    ],
+  },
+  {
+    id: 4,
+    period: "Jul 2024 - Oct 2024",
+    job_title: "Trainee MERN Stack Developer",
+    company: "Buggcy",
+    logo: "/assets/buggcy.png",
+    summary:
+      "Started translating coursework and self-learning into full-stack implementation by building practical features with the MERN stack in a team environment.",
+    highlights: [
+      "Built foundational experience in full-stack delivery.",
+      "Improved team collaboration, debugging, and implementation speed.",
+      "Developed stronger habits around reusable UI and backend integration.",
+    ],
+  },
 ];
 
 export default data;

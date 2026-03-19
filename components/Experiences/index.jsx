@@ -1,52 +1,91 @@
-import React from "react";
-import Image from "next/image.js";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { BriefcaseBusiness, Layers3 } from "lucide-react";
 
-// Experiences Data
-import experiences from "./data/data.js";
+import experiences from "./data/data";
 
 const Experiences = () => {
-	return (
-		<div
-			className="max-w-6xl m-auto p-4 pt-8 sm:pt-20 px-2"
-			id="experiences"
-		>
-			<h1 className="text-3xl text-teal-500 font-bold sm:text-4xl sm:leading-10">
-				<span className="text-5xl sm:text-6xl">#1 +;</span>
-				<br /> Years Of Professional Experience.
-			</h1>
-			<div className="py-6 pt-10 grid lg:grid-cols-3 sm:grid-cols-2 gap-6">
-				{experiences
-					? experiences.map((experience, index) => (
-							<div
-								key={index}
-								className="bg-cyan-900 p-4 rounded hover:bg-cyan-800 relative"
-								title={`${experience.job_title} @${experience.company}`}
-							>
-								<b className="border flex items-center text-teal-500 text-sm bg-white py-1 px-2 rounded absolute left-3 -top-2 hover:bg-teal-500 hover:text-white">
-									<Image
-										src={experience.logo}
-										width={35}
-										height={35}
-										alt="company logo"
-										className="mr-2 rounded-md"
-									></Image>
-									{experience.company}
-								</b>
-								<h2 className="mt-4 mb-2 text-sm text-right font-bold text-teal-500">
-									{experience.year}
-								</h2>
-								<h3 className="font-semibold text-2xl text-white">
-									{experience.job_title}
-								</h3>
-								<p className="mt-2 leading-6 text-sm text-gray-200 text-justify">
-									{experience.description}
-								</p>
-							</div>
-					  ))
-					: null}
-			</div>
-		</div>
-	);
+  return (
+    <section
+      id="experience"
+      className="section-shell"
+    >
+      <div className="mb-10 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+        <div className="max-w-3xl">
+          <p className="section-kicker">Experience</p>
+          <h2 className="section-heading">
+            Real-world product work across internships, shipping practice, and MERN delivery.
+          </h2>
+        </div>
+        <div className="glass-panel flex max-w-xl items-start gap-4 rounded-3xl p-5">
+          <span className="rounded-2xl border border-white/10 bg-white/6 p-3 text-cyan-200">
+            <Layers3 className="size-5" />
+          </span>
+          <p className="text-sm leading-7 text-slate-300">
+            My experience is early-career, but it is already grounded in team collaboration, frontend implementation, and learning how to ship inside real product environments.
+          </p>
+        </div>
+      </div>
+
+      <div className="space-y-5">
+        {experiences.map((experience, index) => (
+          <motion.article
+            key={experience.id}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
+            className="glass-panel rounded-[2rem] p-6 sm:p-7"
+          >
+            <div className="grid gap-6 lg:grid-cols-[220px_1fr] lg:gap-8">
+              <div className="space-y-4">
+                <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-3 py-2">
+                  <Image
+                    src={experience.logo}
+                    alt={`${experience.company} logo`}
+                    width={36}
+                    height={36}
+                    className="rounded-full"
+                  />
+                  <div>
+                    <p className="text-sm font-semibold text-white">{experience.company}</p>
+                    <p className="text-xs text-slate-400">{experience.period}</p>
+                  </div>
+                </div>
+
+                <div className="rounded-[1.5rem] border border-white/10 bg-slate-950/40 p-4">
+                  <div className="flex items-center gap-2 text-cyan-200">
+                    <BriefcaseBusiness className="size-4" />
+                    <span className="text-xs uppercase tracking-[0.22em]">Role</span>
+                  </div>
+                  <p className="mt-3 font-display text-2xl font-semibold text-white">
+                    {experience.job_title}
+                  </p>
+                </div>
+              </div>
+
+              <div className="space-y-5">
+                <p className="max-w-3xl text-base leading-8 text-slate-300">
+                  {experience.summary}
+                </p>
+
+                <div className="grid gap-3 sm:grid-cols-3">
+                  {experience.highlights.map((highlight) => (
+                    <div
+                      key={highlight}
+                      className="rounded-[1.5rem] border border-white/10 bg-white/5 p-4 text-sm leading-7 text-slate-300"
+                    >
+                      {highlight}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.article>
+        ))}
+      </div>
+    </section>
+  );
 };
 
 export default Experiences;

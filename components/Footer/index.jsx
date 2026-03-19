@@ -1,171 +1,58 @@
-import React from "react";
+import { FaGithub, FaLinkedinIn, FaInstagram, FaFacebookF } from "react-icons/fa";
+import { SiX } from "react-icons/si";
 
-// React Icons
-import { FaLinkedinIn, FaGithub, FaInstagram, FaFacebookF } from "react-icons/fa";
-import { SiX } from "react-icons/si"; // X (Twitter)
-import {SOCIAL_LINK} from "../../constants"
+import { NAV_ITEMS, PERSONAL_INFO, SOCIAL_LINK } from "../../constants";
+
+const socialItems = [
+  { label: "LinkedIn", href: SOCIAL_LINK.linkedIn, icon: FaLinkedinIn },
+  { label: "GitHub", href: SOCIAL_LINK.github, icon: FaGithub },
+  { label: "Facebook", href: SOCIAL_LINK.facebook, icon: FaFacebookF },
+  { label: "X", href: SOCIAL_LINK.twitter, icon: SiX },
+  { label: "Instagram", href: SOCIAL_LINK.instagram, icon: FaInstagram },
+];
+
 const Footer = () => {
-	return (
-		<div className="px-2">
-			<div className="py-4 border-b border-b-gray-800 flex justify-between items-center max-w-6xl m-auto">
-				<h2 className="text-base text-white font-semibold">
-					<a href="">Muhammd Huzaifa Khawar</a>
-				</h2>
-				<ul className="flex justify-center items-center gap-3">
-					<li
-						className="text-white text-sm"
-						title="LinkedIn"
-					>
-						<a
-							target="_blank"
-							href={SOCIAL_LINK.linkedIn}
-							className="ease-in-out duration-150 hover:text-teal-500"
-							rel="noreferrer"
-						>
-							<FaLinkedinIn />
-						</a>
-					</li>
+  return (
+    <footer className="border-t border-white/10 py-8">
+      <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+        <div>
+          <p className="font-display text-xl font-semibold text-white">
+            {PERSONAL_INFO.name}
+          </p>
+          <p className="mt-2 text-sm text-slate-400">
+            Frontend-focused software engineer building modern web products.
+          </p>
+        </div>
 
-					<li
-						className="text-white text-sm"
-						title="GitHub"
-					>
-						<a
-							target="_blank"
-							href={SOCIAL_LINK.github}
-							className="ease-in-out duration-150 hover:text-teal-500"
-							rel="noreferrer"
-						>
-							<FaGithub />
-						</a>
-					</li>
-					<li
-						className="text-white text-sm"
-						title="Facebook"
-					>
-						<a
-							target="_blank"
-							href={SOCIAL_LINK.facebook}
-							className="ease-in-out duration-150 hover:text-teal-500"
-							rel="noreferrer"
-						>
-							<FaFacebookF />
-						</a>
-					</li>
-					<li
-						className="text-white text-sm"
-						title="Twitter"
-					>
-						<a
-							target="_blank"
-							href={SOCIAL_LINK.twitter}
-							className="ease-in-out duration-150 hover:text-teal-500"
-							rel="noreferrer"
-						>
-							<SiX />
-						</a>
-					</li>
-					<li
-						className="text-white text-sm"
-						title="Instagram"
-					>
-						<a
-							target="_blank"
-							href={SOCIAL_LINK.instagram}
-							className="ease-in-out duration-150 hover:text-teal-500"
-							rel="noreferrer"
-						>
-							<FaInstagram />
-						</a>
-					</li>
-				</ul>
-			</div>
+        <div className="flex flex-wrap gap-3">
+          {NAV_ITEMS.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="text-sm text-slate-400 transition hover:text-white"
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
 
-			<div className="py-8 flex flex-col gap-4 justify-between items-center max-w-6xl m-auto sm:flex-row sm:gap-0">
-				<ul className="flex justify-center items-center gap-4">
-					<li
-						className="text-gray-400 text-sm"
-						title="Experiences"
-					>
-						<a
-							href="#experiences"
-							className="font-bold ease-in-out duration-150 hover:text-white"
-						>
-							Experiences
-						</a>
-					</li>
-					<li
-						className="text-gray-400 text-sm"
-						title="Projects"
-					>
-						<a
-							href="#projects"
-							className="font-bold ease-in-out duration-150 hover:text-white"
-						>
-							Projects
-						</a>
-					</li>
-					<li
-						className="text-gray-400 text-sm"
-						title="Contact"
-					>
-						<a
-							href="#contact"
-							className="font-bold ease-in-out duration-150 hover:text-white"
-						>
-							Contact
-						</a>
-					</li>
-				</ul>
-				<h5 className="text-white font-initial text-sm">
-					&copy; 2025 - Muhammad. All Rights Reserved.
-				</h5>
-			</div>
-			{/* <div className="py-8 pt-0 px-2">
-				<h5 className="text-white text-sm text-center leading-6">
-					&copy; 2025 - Made with
-					{"  "}
-					<a
-						href="https://nextjs.org/"
-						target="_blank"
-						rel="noreferrer"
-						className="font-semibold text-sky-500"
-					>
-						Next.js
-					</a>{" "}
-					&{" "}
-					<a
-						href="https://tailwindcss.com/"
-						target="_blank"
-						rel="noreferrer"
-						className="font-semibold text-sky-500"
-					>
-						TailwindCSS
-					</a>
-					. <br />
-					Deployed on{" "}
-					<a
-						href="https://vercel.com/"
-						target="_blank"
-						rel="noreferrer"
-						className="font-semibold text-sky-500"
-					>
-						Vercel
-					</a>
-					, Open Sourced on{" "}
-					<a
-						href="https://github.com/boularbahsmail/Software-Developer-Portfolio"
-						target="_blank"
-						rel="noreferrer"
-						className="font-semibold text-sky-500"
-					>
-						Github
-					</a>
-					.
-				</h5>
-			</div> */}
-		</div>
-	);
+        <div className="flex items-center gap-2">
+          {socialItems.map(({ label, href, icon: Icon }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={label}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-200 transition hover:-translate-y-0.5 hover:border-cyan-300/35 hover:bg-cyan-300/10 hover:text-white"
+            >
+              <Icon />
+            </a>
+          ))}
+        </div>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;

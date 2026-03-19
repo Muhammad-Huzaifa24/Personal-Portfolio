@@ -1,91 +1,105 @@
-/* eslint-disable @next/next/no-img-element */
-import React from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { ArrowUpRight, Globe } from "lucide-react";
 
-// Works Data
-import works from "./data/data.js";
+import { Button } from "@/components/ui/button";
+import works from "./data/data";
 
-// React Icons
-import { HiOutlineArrowNarrowRight } from "react-icons/hi";
-//
 const Works = () => {
-	// const sortedWorks = works.sort((a, b) => b.id - a.id);
+  return (
+    <section
+      id="projects"
+      className="section-shell"
+    >
+      <div className="mb-10 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+        <div className="max-w-3xl">
+          <p className="section-kicker">Selected Work</p>
+          <h2 className="section-heading">
+            Projects that reflect how I approach frontend quality, interaction design, and full-stack execution.
+          </h2>
+        </div>
+        <p className="max-w-xl text-sm leading-7 text-slate-300">
+          These projects range from UI-focused builds to full-stack systems, with an emphasis on responsive interfaces, practical architecture, and iterative learning.
+        </p>
+      </div>
 
-	return (
-		<div
-			className="max-w-6xl m-auto p-4 pt-8 px-2 sm:pt-20"
-			id="projects"
-		>
-			<h1 className="text-4xl text-teal-500 font-bold sm:text-5xl">
-				#Latest Works
-			</h1>
-			<p className="text-sm text-teal-500 font-semibold mt-4 mb-8 leading-6">
-				Explore my latest projects, where creativity meets technology to build innovative and impactful solutions.
+      <div className="grid gap-5 lg:grid-cols-2">
+        {works.map((work, index) => (
+          <motion.article
+            key={work.id}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, delay: index * 0.06, ease: "easeOut" }}
+            className={`glass-panel overflow-hidden rounded-[2rem] ${
+              work.featured ? "lg:col-span-1" : "lg:col-span-1"
+            }`}
+          >
+            <div className="overflow-hidden border-b border-white/10">
+              <Image
+                src={work.image_url}
+                alt={work.work_title}
+                width={1200}
+                height={720}
+                className="h-64 w-full object-cover transition duration-500 hover:scale-[1.03]"
+              />
+            </div>
 
-			</p>
-			<div className="grid grid-cols-1 gap-3 lg:grid-cols-3 sm:grid-cols-2 sm:gap-4">
-				{works
-					? works.map((work, index) => (
-							<div
-								key={index}
-								title={`${work.work_title} - ${work.genre}`}
-								className="bg-cyan-900 rounded-lg p-4 max-w-4xl m-auto mb-4 w-full grid grid-cols-1 gap-0 ease-in-out duration-150 hover:bg-cyan-800 sm:mb-0 h-full"
-							>
-								{work.id === 10 ? (
-									<div className="flex justify-center items-center h-full">
-										<h2 className="text-xl text-white font-bold">
-											More projects coming soon...
-										</h2>
-									</div>
-								) : (
-									<>
-										<div className="w-45 flex justify-center items-center">
-											<img
-												className="rounded-lg w-100"
-												src={work.image_url}
-												alt="Work-Image"
-											/>
-										</div>
-										<div className="flex flex-col justify-center items-start w-55 pb-0">
-											<h2 className="text-2xl text-white font-bold my-5 mb-2">
-												{work.work_title}
-											</h2>
-											{work.id === 9 && (
-											<span className="bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded-full mb-2">
-													Latest
-												</span>
-											)}
-											<b className="text-teal-500 mb-2">⎯⎯ {work.genre}</b>
-											<p className="text-gray-300 text-sm leading-6 m-0 text-justify">
-												{work.description}
-											</p>
-											<button
-												className="py-2 px-4 bg-white mt-4 text-black ease-in-out duration-150 border-2 border-white rounded-md hover:bg-gray-900 hover:border-gray-900 hover:text-white"
-												style={{ width: "100%" }}
-												title="Visit website"
-											>
-												<a
-													target="_blank"
-													href={work.deploye_url}
-													className="flex justify-between items-center gap-1 font-semibold text-md p-0 m-0"
-													rel="noreferrer"
-												>
-													{work.is_deployed ? (
-														<span>Visit website</span>
-													) : (
-														<span>Github Source Code</span>
-													)}
-													<HiOutlineArrowNarrowRight />
-												</a>
-											</button>
-										</div>
-									</>
-								)}
-							</div>
-					  ))
-					: null}
-			</div>
-		</div>
-	);
+            <div className="space-y-5 p-6 sm:p-7">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="rounded-full border border-cyan-300/25 bg-cyan-300/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-cyan-100">
+                    {work.genre}
+                  </span>
+                  <span className="text-xs uppercase tracking-[0.22em] text-slate-400">
+                    {work.year}
+                  </span>
+                </div>
+                <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300">
+                  <Globe className="size-3.5" />
+                  {work.is_deployed ? "Live project" : "Source code"}
+                </span>
+              </div>
+
+              <div>
+                <h3 className="font-display text-3xl font-semibold text-white">
+                  {work.work_title}
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-slate-300">
+                  {work.description}
+                </p>
+              </div>
+
+              <div className="flex flex-wrap gap-2">
+                {work.stack.map((tool) => (
+                  <span
+                    key={tool}
+                    className="rounded-full border border-white/10 bg-slate-950/45 px-3 py-2 text-xs font-medium text-slate-200"
+                  >
+                    {tool}
+                  </span>
+                ))}
+              </div>
+
+              <Button
+                asChild
+                className="h-12 w-full rounded-full border border-white/10 bg-white/6 text-white hover:bg-white/10"
+              >
+                <a
+                  href={work.deploye_url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {work.is_deployed ? "Visit project" : "View source"}
+                  <ArrowUpRight className="size-4" />
+                </a>
+              </Button>
+            </div>
+          </motion.article>
+        ))}
+      </div>
+    </section>
+  );
 };
 
 export default Works;
