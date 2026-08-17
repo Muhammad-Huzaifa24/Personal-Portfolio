@@ -21,9 +21,9 @@ const poppins = Poppins({
 
 function MyApp({ Component, pageProps }) {
   return (
-    <main className={poppins.className}>
+    <div className={poppins.className}>
       <Component {...pageProps} />
-    </main>
+    </div>
   )
 }
 
