@@ -43,7 +43,7 @@ const fadeUp = {
 
 const Hero = () => {
 	return (
-		<div className="relative py-16 px-4 max-w-4xl m-auto sm:pt-28 sm:px-2">
+		<div className="relative py-16 px-4 max-w-4xl m-auto sm:pt-28 sm:px-6">
 			{/* soft ambient glow, purely decorative */}
 			<div
 				aria-hidden="true"

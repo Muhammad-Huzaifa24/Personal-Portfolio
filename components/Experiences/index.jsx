@@ -8,7 +8,7 @@ import experiences from "./data/data.js";
 const Experiences = () => {
 	return (
 		<div
-			className="max-w-6xl m-auto px-4 py-16 sm:px-2 sm:py-24"
+			className="max-w-6xl m-auto px-4 py-16 sm:px-6 sm:py-24"
 			id="experiences"
 		>
 			<motion.div

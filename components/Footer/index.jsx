@@ -21,9 +21,9 @@ const FOOTER_LINKS = [
 
 const Footer = () => {
 	return (
-		<footer className="px-4 sm:px-2">
+		<footer className="px-4 sm:px-6">
 			<div className="max-w-6xl m-auto flex flex-col gap-6 border-t border-white/10 py-8 sm:flex-row sm:items-center sm:justify-between">
-				<div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8">
+				<div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8 flex-wrap">
 					<p className="text-sm font-semibold text-white">
 						Muhammad Huzaifa Khawar
 					</p>
@@ -41,7 +41,7 @@ const Footer = () => {
 					</ul>
 				</div>
 
-				<div className="flex items-center gap-4">
+				<div className="flex items-center gap-4 flex-wrap">
 					<ul className="flex items-center gap-4">
 						{SOCIALS.map(({ label, href, icon: Icon }) => (
 							<li key={label}>

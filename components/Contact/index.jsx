@@ -34,7 +34,7 @@ const Contact = () => {
 	];
 
 	return (
-		<div className="max-w-6xl m-auto px-4 py-16 sm:px-2 sm:py-24" id="contact">
+		<div className="max-w-6xl m-auto px-4 py-16 sm:px-6 sm:py-24" id="contact">
 			<motion.div
 				initial={{ opacity: 0, y: 16 }}
 				whileInView={{ opacity: 1, y: 0 }}
@@ -61,7 +61,7 @@ const Contact = () => {
 							</p>
 							<a
 								href={`mailto:${EMAIL}`}
-								className="mt-2 inline-flex items-center gap-2 text-lg font-semibold text-white transition-colors hover:text-teal-300 sm:text-2xl"
+								className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors hover:text-teal-300 sm:text-2xl break-all"
 							>
 								<FaEnvelope className="text-teal-400" aria-hidden="true" />
 								{EMAIL}

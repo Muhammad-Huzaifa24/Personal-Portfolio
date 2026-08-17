@@ -48,11 +48,11 @@ const Navbar = () => {
 				{showAlert && (
 					<motion.div
 						role="status"
-						initial={{ y: -40, opacity: 0 }}
-						animate={{ y: 0, opacity: 1 }}
-						exit={{ y: -40, opacity: 0 }}
-						transition={{ duration: 0.4, ease: "easeOut" }}
-						className="sticky top-0 z-[60] flex items-center justify-center gap-3 border-b border-teal-400/20 bg-teal-500 px-4 py-2.5 text-center text-xs font-medium text-white sm:text-sm"
+						initial={{ height: 0, opacity: 0 }}
+						animate={{ height: "auto", opacity: 1 }}
+						exit={{ height: 0, opacity: 0 }}
+						transition={{ duration: 0.35, ease: "easeInOut" }}
+						className="overflow-hidden sticky top-0 z-[60] flex items-center justify-center gap-3 border-b border-teal-400/20 bg-teal-500 px-4 py-2.5 text-center text-xs font-medium text-white sm:text-sm"
 					>
 						<span>
 							🚀 Check out my latest project — scroll down to Projects

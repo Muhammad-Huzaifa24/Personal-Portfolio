@@ -10,7 +10,7 @@ import { FaGithub } from "react-icons/fa";
 
 const Works = () => {
 	return (
-		<div className="max-w-6xl m-auto px-4 py-16 sm:px-2 sm:py-24" id="projects">
+		<div className="max-w-6xl m-auto px-4 py-16 sm:px-6 sm:py-24" id="projects">
 			<motion.div
 				initial={{ opacity: 0, y: 16 }}
 				whileInView={{ opacity: 1, y: 0 }}
