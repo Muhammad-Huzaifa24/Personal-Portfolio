@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 // React Icons
-import { FaLinkedinIn, FaGithub, FaWhatsapp, FaEnvelope } from "react-icons/fa";
+import { FaLinkedinIn, FaGithub, FaWhatsapp, FaEnvelope, FaCommentDots } from "react-icons/fa";
 
 const EMAIL = "huzaifakhawar100@gmail.com";
 
@@ -47,9 +47,10 @@ const Contact = () => {
 						<span className="inline-block rounded-full border border-teal-400/30 bg-teal-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-teal-300">
 							Contact
 						</span>
-						<h2 className="mt-4 text-3xl font-bold leading-tight text-white sm:text-4xl">
-							Feel free, say hi
-						</h2>
+						<h2 className="mt-4 text-3xl font-bold leading-tight text-white sm:text-4xl flex items-center gap-3">
+						<FaCommentDots className="text-teal-400" aria-hidden="true" />
+						Feel free, say hi
+					</h2>
 						<p className="mt-4 max-w-md text-sm leading-6 text-slate-400 sm:text-base">
 							Have a project in mind or just want to connect? My
 							inbox is always open.

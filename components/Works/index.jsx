@@ -6,9 +6,15 @@ import works from "./data/data.js";
 
 // React Icons
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaLayerGroup } from "react-icons/fa";
 
 const Works = () => {
+	// Sort descending by id so the highest id (latest project) always renders first.
+	const sortedWorks = [...works].sort((a, b) => b.id - a.id);
+
+	// The project with the highest id gets the LATEST badge.
+	const latestProjectId = sortedWorks[0]?.id;
+
 	return (
 		<div className="max-w-6xl m-auto px-4 py-16 sm:px-6 sm:py-24" id="projects">
 			<motion.div
@@ -20,8 +26,9 @@ const Works = () => {
 				<span className="inline-block rounded-full border border-teal-400/30 bg-teal-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-teal-300">
 					Projects
 				</span>
-				<h2 className="mt-4 text-3xl font-bold text-white sm:text-4xl">
-					Latest Works
+				<h2 className="mt-4 text-3xl font-bold text-white sm:text-4xl flex items-center gap-3">
+					<FaLayerGroup className="text-teal-400" aria-hidden="true" />
+					Builds & Projects
 				</h2>
 				<p className="mt-3 max-w-2xl text-sm leading-6 text-slate-400 sm:text-base">
 					A selection of projects where creativity meets technology to
@@ -30,24 +37,7 @@ const Works = () => {
 			</motion.div>
 
 			<div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-				{works?.map((work, index) => {
-					if (work.id === 10) {
-						return (
-							<motion.div
-								key={work.id}
-								initial={{ opacity: 0, y: 16 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true, amount: 0.3 }}
-								transition={{ duration: 0.4, delay: index * 0.05 }}
-								className="flex min-h-[220px] items-center justify-center rounded-2xl border border-dashed border-white/15 bg-white/[0.02] p-6 text-center"
-							>
-								<h3 className="text-lg font-semibold text-slate-400">
-									More projects coming soon...
-								</h3>
-							</motion.div>
-						);
-					}
-
+				{sortedWorks?.map((work, index) => {
 					return (
 						<motion.div
 							key={work.id}
@@ -66,7 +56,7 @@ const Works = () => {
 									loading="lazy"
 									className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
 								/>
-								{work.id === 9 && (
+								{work.id === latestProjectId && (
 									<span className="absolute left-3 top-3 rounded-full bg-red-500 px-2.5 py-1 text-xs font-semibold text-white shadow-card">
 										Latest
 									</span>
@@ -105,6 +95,18 @@ const Works = () => {
 					);
 				})}
 			</div>
+
+			<motion.div
+				initial={{ opacity: 0, y: 16 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true, amount: 0.3 }}
+				transition={{ duration: 0.4, delay: 0.1 }}
+				className="mt-5 flex min-h-[100px] items-center justify-center rounded-2xl border border-dashed border-white/15 bg-white/[0.02] p-6 text-center"
+			>
+				<h3 className="text-lg font-semibold text-slate-400">
+					More projects to be added soon!
+				</h3>
+			</motion.div>
 		</div>
 	);
 };

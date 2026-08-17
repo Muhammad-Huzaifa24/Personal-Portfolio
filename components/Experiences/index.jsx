@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image.js";
 import { motion } from "framer-motion";
+import { FaBriefcase } from "react-icons/fa";
 
 // Experiences Data
 import experiences from "./data/data.js";
@@ -20,8 +21,9 @@ const Experiences = () => {
 				<span className="inline-block rounded-full border border-teal-400/30 bg-teal-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-teal-300">
 					Experience
 				</span>
-				<h2 className="mt-4 text-3xl font-bold text-white sm:text-4xl">
-					1+ years of professional experience
+				<h2 className="mt-4 text-3xl font-bold text-white sm:text-4xl flex items-center gap-3">
+					<FaBriefcase className="text-teal-400" aria-hidden="true" />
+					2+ years of professional experience
 				</h2>
 			</motion.div>
 

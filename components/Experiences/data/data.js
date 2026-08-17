@@ -52,7 +52,7 @@
 const data = [
 	{
 		id: 1,
-		year: "02/25 - 04/25",
+		year: "Jun '25 - Present",
 		job_title: "Software Engineer",
 		company: "TechClan",
 		logo: "/assets/tech-clan.png",
@@ -61,7 +61,7 @@ const data = [
 	},
 	{
 		id: 2,
-		year: "02/25 - 04/25",
+		year: "Feb '25 - Apr '25",
 		job_title: "ASE - MERN Stack",
 		company: "Viral Square",
 		logo: "/assets/vs.png",
@@ -70,7 +70,7 @@ const data = [
 	},
 	{
 		id: 3,
-		year: "11/24 - 02/25",
+		year: "Nov '24 - Feb '25",
 		job_title: "MERN Stack Intern",
 		company: "Viral Square",
 		logo: "/assets/vs.png",
@@ -79,7 +79,7 @@ const data = [
 	},
 	{
 		id: 4,
-		year: "07/24 - 10/24",
+		year: "July '24 - Oct '24",
 		job_title: "MERN Stack Intern",
 		company: "Buggcy",
 		logo: "/assets/buggcy.png",
