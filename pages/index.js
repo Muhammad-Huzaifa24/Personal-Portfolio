@@ -10,27 +10,35 @@ import Footer from "../components/Footer";
 
 export default function Home() {
 	return (
-		<div className="p-2">
+		<>
 			<Head>
-				<title>Muhammad - Software Engineer</title>
+				<title>Muhammad Huzaifa Khawar | Software Engineer</title>
 				<meta
 					name="description"
-					content="Software developer portfolio using Next.js & Tailwind CSS."
+					content="Portfolio of Muhammad Huzaifa Khawar, a self-taught front-end software developer building responsive web apps with the MERN stack, Next.js and React."
 				/>
-				<link
-					rel="icon"
-					href="/favicon.ico"
+				<meta name="theme-color" content="#0a0f1e" />
+				<meta property="og:type" content="website" />
+				<meta
+					property="og:title"
+					content="Muhammad Huzaifa Khawar | Software Engineer"
 				/>
+				<meta
+					property="og:description"
+					content="Portfolio of Muhammad Huzaifa Khawar, a self-taught front-end software developer building responsive web apps with the MERN stack, Next.js and React."
+				/>
+				<meta property="og:url" content="https://muhammad-huzaifa24.vercel.app/" />
+				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<div className="max-w-7xl m-auto">
-				<Navbar />
+			<Navbar />
+			<main className="max-w-7xl m-auto">
 				<Hero />
 				<Experiences />
 				<Works />
 				<Contact />
-				<Footer />
-			</div>
-		</div>
+			</main>
+			<Footer />
+		</>
 	);
 }
