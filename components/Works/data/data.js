@@ -162,6 +162,15 @@ const data = [
 		deploye_url: "https://next-js-and-shadcn-ui-admin-dashboa-ten-iota.vercel.app/",
 		is_deployed: true,
 	},
+	{
+		id: 14,
+		work_title: "Sprint Flow Dashboard",
+		image_url: "https://res.cloudinary.com/dvycqni2r/image/upload/v1787558863/sprint-dashboard_cus2qa.png",
+		description: "AI-vibe-coded Sprint & Project Management Dashboard built with Next.js and TypeScript Frontend focused on using Google Gemini in Antigravity IDE. Designed for managing projects, sprints, tasks, deadlines, assignees, and team progress through a modern dashboard.",
+		genre: "Vibe Coded | NextJS | Vercel | Antigravity IDE",
+		deploye_url: "https://sprint-dashboard-lyart.vercel.app/",
+		is_deployed: true,
+	},
 ];
 
 export default data;
