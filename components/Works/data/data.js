@@ -171,6 +171,15 @@ const data = [
 		deploye_url: "https://sprint-dashboard-lyart.vercel.app/",
 		is_deployed: true,
 	},
+	{
+		id: 15,
+		work_title: "Epsilon Fully Customizable E-commerce Template",
+		image_url: "https://res.cloudinary.com/dvycqni2r/image/upload/v1788632465/id-preview-9164196c--a0e7437b-edad-4001-9653-0f4190ebd11e.lovable.app-1788628480496_lt0dlk.avif",
+		description: "Epsilon Store — a Shopify-inspired ecommerce app with a full storefront + admin dashboard, built on Next.js, Tailwind, and Supabase.",
+		genre: "Vibe Coded | NextJS | Loveable | Antigravity IDE",
+		deploye_url: "https://grace-grow-ecommerce.lovable.app/",
+		is_deployed: true,
+	},
 ];
 
 export default data;
