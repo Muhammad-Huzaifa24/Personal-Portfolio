@@ -38,6 +38,33 @@ function TypingIndicator() {
 	);
 }
 
+// Regex to detect URLs in plain text
+const URL_REGEX = /(https?:\/\/[^\s]+)/g;
+
+// Renders text with URLs converted to styled clickable links
+function RichText({ text }) {
+	const parts = text.split(URL_REGEX);
+	return (
+		<>
+			{parts.map((part, i) =>
+				URL_REGEX.test(part) ? (
+					<a
+						key={i}
+						href={part}
+						target="_blank"
+						rel="noopener noreferrer"
+						className="text-teal-400 underline underline-offset-2 decoration-teal-400/50 hover:text-teal-300 hover:decoration-teal-300 transition-colors"
+					>
+						{part}
+					</a>
+				) : (
+					<span key={i}>{part}</span>
+				)
+			)}
+		</>
+	);
+}
+
 // Single message bubble
 function MessageBubble({ msg }) {
 	const isUser = msg.role === "user";
@@ -55,7 +82,7 @@ function MessageBubble({ msg }) {
 						: "rounded-tl-sm border border-white/10 bg-white/[0.05] text-slate-300"
 				}`}
 			>
-				{msg.text}
+				<RichText text={msg.text} />
 			</div>
 		</motion.div>
 	);
