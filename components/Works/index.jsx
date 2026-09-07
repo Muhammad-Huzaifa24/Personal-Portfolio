@@ -64,23 +64,31 @@ const Works = () => {
 							</div>
 
 							<div className="flex flex-1 flex-col p-5">
-								<b className="text-xs font-semibold uppercase tracking-wide text-teal-400">
-									{work.genre}
-								</b>
-								<h3 className="mt-2 text-xl font-bold text-white">
+								{/* Genre tags as individual pills */}
+								<div className="flex flex-wrap gap-1.5">
+									{work.genre.split("|").map((tag) => (
+										<span
+											key={tag.trim()}
+											className="rounded-md border border-teal-400/20 bg-teal-500/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-teal-400"
+										>
+											{tag.trim()}
+										</span>
+									))}
+								</div>
+								<h3 className="mt-3 text-lg font-bold leading-snug text-white">
 									{work.work_title}
 								</h3>
-								<p className="mt-2 flex-1 text-sm leading-6 text-slate-300">
+								<p className="mt-2 flex-1 text-sm leading-6 text-slate-400">
 									{work.description}
 								</p>
-								<div className="mt-5 flex flex-col gap-2 sm:flex-row">
+								<div className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2">
 									{work.deploye_url && (
 										<a
 											target="_blank"
 											rel="noopener noreferrer"
 											href={work.deploye_url}
 											title="Visit website"
-											className="flex flex-1 items-center justify-center gap-2 rounded-lg border-2 border-white/15 py-2.5 text-sm font-semibold text-white transition-colors duration-150 hover:border-teal-400 hover:bg-teal-500/10 hover:text-teal-300"
+											className="flex items-center justify-center gap-2 rounded-xl bg-teal-500 py-3 text-sm font-semibold text-white transition-all duration-150 hover:bg-teal-400"
 										>
 											<span>Visit website</span>
 											<HiOutlineArrowNarrowRight aria-hidden="true" />
@@ -92,7 +100,7 @@ const Works = () => {
 											rel="noopener noreferrer"
 											href={work.repo_url}
 											title="View source code on GitHub"
-											className="flex flex-1 items-center justify-center gap-2 rounded-lg border-2 border-white/15 py-2.5 text-sm font-semibold text-white transition-colors duration-150 hover:border-teal-400 hover:bg-teal-500/10 hover:text-teal-300"
+											className="flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/[0.05] py-3 text-sm font-semibold text-white transition-all duration-150 hover:border-white/40 hover:bg-white/10"
 										>
 											<FaGithub aria-hidden="true" />
 											<span>Source code</span>

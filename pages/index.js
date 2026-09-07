@@ -5,10 +5,15 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Experiences from "../components/Experiences";
 import Works from "../components/Works";
+import GitHubStats from "../components/GitHubStats";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import AiChat from "../components/AiChat";
 
-export default function Home() {
+// Constants
+import { GITHUB_USERNAME } from "../constants";
+
+export default function Home({ githubStats }) {
 	return (
 		<>
 			<Head>
@@ -41,9 +46,71 @@ export default function Home() {
 				<Hero />
 				<Experiences />
 				<Works />
+				<GitHubStats stats={githubStats} />
 				<Contact />
 			</main>
 			<Footer />
+			<AiChat />
 		</>
 	);
+}
+
+export async function getStaticProps() {
+	const FALLBACK = {
+		props: {
+			githubStats: {
+				repos: 0,
+				followers: 0,
+				stars: 0,
+				topLanguage: "JavaScript",
+			},
+		},
+		revalidate: 3600,
+	};
+
+	try {
+		const [userRes, reposRes] = await Promise.all([
+			fetch(`https://api.github.com/users/${GITHUB_USERNAME}`),
+			fetch(
+				`https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100&sort=updated`
+			),
+		]);
+
+		if (!userRes.ok || !reposRes.ok) return FALLBACK;
+
+		const user = await userRes.json();
+		const repos = await reposRes.json();
+
+		// Sum all stars across public repos
+		const stars = Array.isArray(repos)
+			? repos.reduce((sum, r) => sum + (r.stargazers_count || 0), 0)
+			: 0;
+
+		// Find the most-used language across repos
+		const langMap = {};
+		if (Array.isArray(repos)) {
+			repos.forEach((r) => {
+				if (r.language) {
+					langMap[r.language] = (langMap[r.language] || 0) + 1;
+				}
+			});
+		}
+		const topLanguage =
+			Object.keys(langMap).sort((a, b) => langMap[b] - langMap[a])[0] ||
+			"JavaScript";
+
+		return {
+			props: {
+				githubStats: {
+					repos: user.public_repos ?? 0,
+					followers: user.followers ?? 0,
+					stars,
+					topLanguage,
+				},
+			},
+			revalidate: 86400, // ISR: refresh once per day
+		};
+	} catch {
+		return FALLBACK;
+	}
 }

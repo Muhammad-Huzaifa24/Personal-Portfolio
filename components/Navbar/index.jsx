@@ -5,14 +5,17 @@ import {
 	FaProjectDiagram,
 	FaEnvelope,
 	FaDownload,
+	FaGithub,
+	FaLayerGroup,
 } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { RESUME_DOWNLOAD_LINK } from "../../constants";
 
 const NAV_LINKS = [
 	{ href: "#experiences", label: "Experience", icon: FaBriefcase },
-	{ href: "#projects", label: "Projects", icon: FaProjectDiagram },
-	{ href: "#contact", label: "Contact", icon: FaEnvelope },
+	{ href: "#projects",    label: "Projects",   icon: FaProjectDiagram },
+	{ href: "#github",      label: "GitHub",     icon: FaGithub },
+	{ href: "#contact",     label: "Contact",    icon: FaEnvelope },
 ];
 
 const Navbar = () => {
@@ -52,19 +55,30 @@ const Navbar = () => {
 						animate={{ height: "auto", opacity: 1 }}
 						exit={{ height: 0, opacity: 0 }}
 						transition={{ duration: 0.35, ease: "easeInOut" }}
-						className="overflow-hidden sticky top-0 z-[60] flex items-center justify-center gap-3 border-b border-teal-400/20 bg-teal-500 px-4 py-2.5 text-center text-xs font-medium text-white sm:text-sm"
+						className="overflow-hidden sticky top-0 z-[60] border-b border-teal-400/20 bg-ink-900/95 backdrop-blur-sm"
 					>
-						<span>
-							🚀 Check out my latest project — scroll down to Projects
-						</span>
-						<button
-							type="button"
-							aria-label="Dismiss announcement"
-							className="ml-1 rounded p-0.5 text-white/90 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
-							onClick={() => setShowAlert(false)}
-						>
-							✕
-						</button>
+						<div className="flex items-center justify-center gap-2.5 px-4 py-2.5">
+							<span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teal-500/15 text-teal-400">
+								<FaLayerGroup className="text-[10px]" aria-hidden="true" />
+							</span>
+							<a
+								href="#projects"
+								className="text-xs font-medium text-slate-300 transition-colors hover:text-teal-400 sm:text-sm"
+							>
+								Check out my latest project —{" "}
+								<span className="font-semibold text-teal-400 underline underline-offset-2">
+									scroll down to Projects
+								</span>
+							</a>
+							<button
+								type="button"
+								aria-label="Dismiss announcement"
+								className="ml-2 flex h-5 w-5 shrink-0 items-center justify-center rounded text-slate-500 transition-colors hover:text-slate-300"
+								onClick={() => setShowAlert(false)}
+							>
+								✕
+							</button>
+						</div>
 					</motion.div>
 				)}
 			</AnimatePresence>

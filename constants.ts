@@ -7,3 +7,4 @@ export const SOCIAL_LINK = {
 }
 export const RESUME_DOWNLOAD_LINK = "https://drive.google.com/uc?export=download&id=19XF2wPV7M2MkUAN52bTQWBMtNygNuYE7";
 export const RESUME_LINK = "https://drive.google.com/file/d/19XF2wPV7M2MkUAN52bTQWBMtNygNuYE7/view?usp=sharing";
+export const GITHUB_USERNAME = "Muhammad-Huzaifa24";
