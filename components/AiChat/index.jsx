@@ -1,11 +1,21 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaCommentDots, FaTimes, FaPaperPlane } from "react-icons/fa";
+import { FaTimes, FaPaperPlane } from "react-icons/fa";
 
 const GREETING = {
 	role: "ai",
 	text: "Hi! I'm Huzaifa's AI assistant. Ask me about his skills, projects, experience, or availability.",
 };
+
+// Recruiter-focused preset questions
+const PRESETS = [
+	"What is Huzaifa's tech stack?",
+	"How many years of experience does he have?",
+	"What projects has he built?",
+	"Where has he worked?",
+	"Is he available for hire?",
+	"How can I contact him?",
+];
 
 // Typing indicator — three animated dots
 function TypingIndicator() {
@@ -61,6 +71,9 @@ const AiChat = () => {
 	const inputRef = useRef(null);
 	const panelRef = useRef(null);
 
+	// Only show presets when no user message has been sent yet
+	const showPresets = messages.length === 1;
+
 	// Auto-scroll to latest message
 	useEffect(() => {
 		bottomRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -82,19 +95,19 @@ const AiChat = () => {
 		return () => window.removeEventListener("keydown", onKey);
 	}, [open]);
 
-	async function send() {
-		const text = input.trim();
-		if (!text || loading) return;
+	async function send(text) {
+		const trimmed = (text ?? input).trim();
+		if (!trimmed || loading) return;
 
 		setInput("");
-		setMessages((prev) => [...prev, { role: "user", text }]);
+		setMessages((prev) => [...prev, { role: "user", text: trimmed }]);
 		setLoading(true);
 
 		try {
 			const res = await fetch("/api/chat", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({ message: text }),
+				body: JSON.stringify({ message: trimmed }),
 			});
 			const data = await res.json();
 			setMessages((prev) => [
@@ -115,7 +128,6 @@ const AiChat = () => {
 	}
 
 	function onKeyDown(e) {
-		// Enter without Shift submits
 		if (e.key === "Enter" && !e.shiftKey) {
 			e.preventDefault();
 			send();
@@ -134,7 +146,7 @@ const AiChat = () => {
 						animate={{ opacity: 1, y: 0, scale: 1 }}
 						exit={{ opacity: 0, y: 20, scale: 0.97 }}
 						transition={{ duration: 0.2, ease: "easeOut" }}
-						className="fixed bottom-24 right-4 z-50 flex w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#0a0f1e]/95 shadow-card-hover backdrop-blur-md sm:right-6 sm:w-96 lg:w-[420px]"
+						className="fixed bottom-24 right-4 z-50 flex w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-2xl border border-teal-400/20 bg-[#0a0f1e]/95 shadow-[0_0_0_1px_rgba(45,212,191,0.1),0_8px_32px_rgba(0,0,0,0.6),0_0_40px_rgba(45,212,191,0.12)] backdrop-blur-md sm:right-6 sm:w-96 lg:w-[420px]"
 						role="dialog"
 						aria-label="Chat with Huzaifa's AI assistant"
 					>
@@ -165,11 +177,36 @@ const AiChat = () => {
 							</button>
 						</div>
 
-						{/* Messages */}
+						{/* Messages + presets */}
 						<div className="flex h-80 flex-col gap-3 overflow-y-auto p-4">
 							{messages.map((msg, i) => (
 								<MessageBubble key={i} msg={msg} />
 							))}
+
+							{/* Preset chips — only before first user message */}
+							<AnimatePresence>
+								{showPresets && !loading && (
+									<motion.div
+										initial={{ opacity: 0, y: 8 }}
+										animate={{ opacity: 1, y: 0 }}
+										exit={{ opacity: 0, y: 4 }}
+										transition={{ duration: 0.2, delay: 0.15 }}
+										className="flex flex-wrap gap-2 pt-1"
+									>
+										{PRESETS.map((q) => (
+											<button
+												key={q}
+												onClick={() => send(q)}
+												disabled={loading}
+												className="rounded-full border border-teal-400/25 bg-teal-500/10 px-3 py-1.5 text-left text-xs font-medium text-teal-300 transition-colors hover:border-teal-400/50 hover:bg-teal-500/20 hover:text-teal-200 disabled:opacity-40"
+											>
+												{q}
+											</button>
+										))}
+									</motion.div>
+								)}
+							</AnimatePresence>
+
 							{loading && <TypingIndicator />}
 							<div ref={bottomRef} />
 						</div>
@@ -188,7 +225,7 @@ const AiChat = () => {
 								className="flex-1 resize-none rounded-lg border border-white/10 bg-white/[0.05] px-3 py-2 text-sm leading-5 text-white placeholder:text-slate-500 focus:border-teal-400/50 focus:outline-none disabled:opacity-50"
 							/>
 							<button
-								onClick={send}
+								onClick={() => send()}
 								disabled={loading || !input.trim()}
 								aria-label="Send message"
 								className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-teal-500 text-white transition-colors hover:bg-teal-400 disabled:cursor-not-allowed disabled:opacity-40"
@@ -205,13 +242,8 @@ const AiChat = () => {
 				onClick={() => setOpen((prev) => !prev)}
 				aria-label={open ? "Close chat" : "Open AI chat assistant"}
 				title="Chat with Huzaifa's AI assistant"
-				className="fixed bottom-6 right-4 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-teal-500 text-white shadow-card-hover transition-colors hover:bg-teal-400 sm:right-6"
-				// Idle pulse — stops when panel is open
-				animate={
-					open
-						? { scale: 1 }
-						: { scale: [1, 1.08, 1] }
-				}
+				className="fixed bottom-6 right-4 z-50 flex h-14 w-14 items-center justify-center rounded-full shadow-card-hover transition-opacity hover:opacity-90 sm:right-6"
+				animate={open ? { scale: 1 } : { scale: [1, 1.08, 1] }}
 				transition={
 					open
 						? { duration: 0.15 }
@@ -226,8 +258,9 @@ const AiChat = () => {
 							animate={{ rotate: 0, opacity: 1 }}
 							exit={{ rotate: 90, opacity: 0 }}
 							transition={{ duration: 0.15 }}
+							className="flex h-14 w-14 items-center justify-center rounded-full bg-teal-500"
 						>
-							<FaTimes className="text-xl" />
+							<FaTimes className="text-xl text-white" />
 						</motion.span>
 					) : (
 						<motion.span
@@ -236,8 +269,14 @@ const AiChat = () => {
 							animate={{ rotate: 0, opacity: 1 }}
 							exit={{ rotate: -90, opacity: 0 }}
 							transition={{ duration: 0.15 }}
+							className="relative flex h-14 w-14 items-center justify-center rounded-full bg-teal-500"
 						>
-							<FaCommentDots className="text-xl" />
+							{/* eslint-disable-next-line @next/next/no-img-element */}
+							<img
+								src="/assets/chatbot-icon.png"
+								alt="Open chat"
+								className="h-14 w-14 rounded-full object-cover mix-blend-luminosity brightness-150"
+							/>
 						</motion.span>
 					)}
 				</AnimatePresence>
