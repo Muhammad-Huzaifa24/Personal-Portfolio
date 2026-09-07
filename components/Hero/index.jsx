@@ -86,22 +86,46 @@ const Hero = () => {
 					I build responsive, full-stack web apps using React, Next.js, Node.js, Express, and MongoDB — combining hands-on coding with AI-assisted workflows to move fast from idea to live product. Over the past year, I&apos;ve sharpened these skills through real projects, not just tutorials.
 				</motion.p>
 
-				{/* Tech stack */}
-				<motion.ul
+				{/* Tech stack — infinite marquee, two rows opposite directions */}
+				<motion.div
 					variants={fadeUp}
-					className="mt-6 flex flex-wrap justify-center gap-2 sm:justify-start"
 					aria-label="Core technologies"
+					className="relative mt-6 overflow-hidden"
 				>
-					{TECH_STACK.map(({ label, icon: Icon }) => (
-						<li
-							key={label}
-							className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs font-medium text-slate-300"
-						>
-							<Icon className="text-teal-400" aria-hidden="true" />
-							{label}
-						</li>
-					))}
-				</motion.ul>
+					{/* fade edges */}
+					<div aria-hidden="true" className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-[#0a0f1e] to-transparent" />
+					<div aria-hidden="true" className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-[#0a0f1e] to-transparent" />
+
+					{/* Row 1 — left */}
+					<div className="marquee-track mb-2 flex overflow-hidden">
+						<ul className="animate-marquee-left flex shrink-0 items-center gap-2">
+							{[...TECH_STACK, ...TECH_STACK].map(({ label, icon: Icon }, i) => (
+								<li
+									key={`r1-${i}`}
+									className="flex shrink-0 items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs font-medium text-slate-300"
+								>
+									<Icon className="text-teal-400" aria-hidden="true" />
+									{label}
+								</li>
+							))}
+						</ul>
+					</div>
+
+					{/* Row 2 — right */}
+					<div className="marquee-track flex overflow-hidden">
+						<ul className="animate-marquee-right flex shrink-0 items-center gap-2">
+							{[...TECH_STACK, ...TECH_STACK].map(({ label, icon: Icon }, i) => (
+								<li
+									key={`r2-${i}`}
+									className="flex shrink-0 items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs font-medium text-slate-300"
+								>
+									<Icon className="text-teal-400" aria-hidden="true" />
+									{label}
+								</li>
+							))}
+						</ul>
+					</div>
+				</motion.div>
 
 				{/* CTAs */}
 				<motion.div
