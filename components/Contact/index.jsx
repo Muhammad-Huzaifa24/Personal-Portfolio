@@ -15,14 +15,14 @@ const Contact = () => {
 	const channels = [
 		{
 			label: "GitHub",
-			sub: "/Muhammad-Huzaifa24",
+			sub: "Check out my projects",
 			href: "https://github.com/Muhammad-Huzaifa24",
 			icon: FaGithub,
 		},
 		{
 			label: "LinkedIn",
-			sub: "/in/muhammad-huzaifa-569794290",
-			href: "https://www.linkedin.com/in/muhammad-huzaifa-569794290/",
+			sub: "Let's connect professionally",
+			href: "https://www.linkedin.com/in/muhammd-huzaifa-khawar/",
 			icon: FaLinkedinIn,
 		},
 		{
@@ -48,9 +48,9 @@ const Contact = () => {
 							Contact
 						</span>
 						<h2 className="mt-4 text-3xl font-bold leading-tight text-white sm:text-4xl flex items-center gap-3">
-						<FaCommentDots className="text-teal-400" aria-hidden="true" />
-						Feel free, say hi
-					</h2>
+							<FaCommentDots className="text-teal-400" aria-hidden="true" />
+							Feel free, say hi
+						</h2>
 						<p className="mt-4 max-w-md text-sm leading-6 text-slate-400 sm:text-base">
 							Have a project in mind or just want to connect? My
 							inbox is always open.
@@ -62,15 +62,16 @@ const Contact = () => {
 							</p>
 							<a
 								href={`mailto:${EMAIL}`}
-								className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors hover:text-teal-300 sm:text-2xl break-all"
+								className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors hover:text-teal-300 sm:text-xl break-all"
 							>
-								<FaEnvelope className="text-teal-400" aria-hidden="true" />
+								<FaEnvelope className="shrink-0 text-teal-400" aria-hidden="true" />
 								{EMAIL}
 							</a>
 						</div>
 					</div>
 
-					<ul className="grid gap-3 sm:grid-cols-1">
+					{/* Channel cards */}
+					<ul className="grid gap-3">
 						{channels.map(({ label, sub, href, icon: Icon }) => (
 							<li key={label}>
 								<a
@@ -87,7 +88,9 @@ const Contact = () => {
 										<span className="text-sm font-semibold text-white">
 											{label}
 										</span>
-										<span className="text-xs text-slate-400">{sub}</span>
+										<span className="hidden text-xs text-slate-400 sm:block">
+											{sub}
+										</span>
 									</span>
 								</a>
 							</li>

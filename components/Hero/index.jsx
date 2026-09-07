@@ -8,24 +8,26 @@ import {
 	FaGithub,
 	FaInstagram,
 	FaFacebookF,
-	FaHtml5,
-	FaCss3Alt,
 	FaJs,
 	FaReact,
 	FaNodeJs,
+	FaGitAlt,
 } from "react-icons/fa";
-import { SiX, SiNextdotjs, SiMongodb, SiExpress } from "react-icons/si";
+import { SiX, SiNextdotjs, SiMongodb, SiExpress, SiTypescript, SiTailwindcss } from "react-icons/si";
+import { TbApiApp } from "react-icons/tb";
 import { SOCIAL_LINK, RESUME_LINK } from "../../constants";
 
 const TECH_STACK = [
-	{ label: "HTML5", icon: FaHtml5 },
-	{ label: "CSS3", icon: FaCss3Alt },
 	{ label: "JavaScript", icon: FaJs },
+	{ label: "TypeScript", icon: SiTypescript },
 	{ label: "React", icon: FaReact },
 	{ label: "Next.js", icon: SiNextdotjs },
 	{ label: "Node.js", icon: FaNodeJs },
 	{ label: "Express", icon: SiExpress },
 	{ label: "MongoDB", icon: SiMongodb },
+	{ label: "REST APIs", icon: TbApiApp },
+	{ label: "Tailwind CSS", icon: SiTailwindcss },
+	{ label: "Git", icon: FaGitAlt },
 ];
 
 const SOCIALS = [
@@ -74,18 +76,14 @@ const Hero = () => {
 					variants={fadeUp}
 					className="mt-3 text-lg font-medium text-teal-400 sm:text-xl"
 				>
-					Self-Taught Front-End Software Developer
+					Full-Stack Developer · Building with Code & AI
 				</motion.p>
 
 				<motion.p
 					variants={fadeUp}
 					className="mt-4 max-w-2xl text-base leading-7 text-slate-400 sm:text-lg sm:leading-8"
 				>
-					I enjoy building responsive web apps and interfaces using
-					HTML5, CSS3, JavaScript, Next.js, React.js, MongoDB, Node.js
-					and Express.js REST APIs. I&apos;ve been working on the web
-					for around 1+ years, building projects through YouTube
-					tutorials and hands-on learning.
+					I build responsive, full-stack web apps using React, Next.js, Node.js, Express, and MongoDB — combining hands-on coding with AI-assisted workflows to move fast from idea to live product. Over the past year, I&apos;ve sharpened these skills through real projects, not just tutorials.
 				</motion.p>
 
 				{/* Tech stack */}
@@ -108,14 +106,14 @@ const Hero = () => {
 				{/* CTAs */}
 				<motion.div
 					variants={fadeUp}
-					className="my-8 flex flex-wrap items-center justify-center gap-3 sm:justify-start"
+					className="my-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:justify-start"
 				>
 					<a
 						href={RESUME_LINK}
 						target="_blank"
 						rel="noopener noreferrer"
 						title="View Resume"
-						className="flex items-center gap-2 rounded-lg border-2 border-teal-500 bg-teal-500 px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-150 hover:bg-transparent hover:text-teal-400 sm:text-base"
+						className="flex w-full items-center justify-center gap-2 rounded-lg border-2 border-teal-500 bg-teal-500 px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-150 hover:bg-transparent hover:text-teal-400 sm:w-auto sm:text-base"
 					>
 						<span>View Resume</span>
 						<RiProfileLine aria-hidden="true" />
@@ -123,7 +121,7 @@ const Hero = () => {
 					<a
 						href="#contact"
 						title="Get in touch"
-						className="flex items-center gap-2 rounded-lg border-2 border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-150 hover:border-teal-400 hover:text-teal-400 sm:text-base"
+						className="flex w-full items-center justify-center gap-2 rounded-lg border-2 border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-150 hover:border-teal-400 hover:text-teal-400 sm:w-auto sm:text-base"
 					>
 						<span>Get in touch</span>
 						<RiContactsBookLine aria-hidden="true" />

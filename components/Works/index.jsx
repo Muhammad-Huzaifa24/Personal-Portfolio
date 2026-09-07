@@ -73,23 +73,32 @@ const Works = () => {
 								<p className="mt-2 flex-1 text-sm leading-6 text-slate-300">
 									{work.description}
 								</p>
-								<a
-									target="_blank"
-									rel="noopener noreferrer"
-									href={work.deploye_url}
-									title={work.is_deployed ? "Visit website" : "View source code on GitHub"}
-									className="mt-5 flex items-center justify-center gap-2 rounded-lg border-2 border-white/15 py-2.5 text-sm font-semibold text-white transition-colors duration-150 hover:border-teal-400 hover:bg-teal-500/10 hover:text-teal-300"
-								>
-									{work.is_deployed ? (
-										<span>Visit website</span>
-									) : (
-										<>
+								<div className="mt-5 flex flex-col gap-2 sm:flex-row">
+									{work.deploye_url && (
+										<a
+											target="_blank"
+											rel="noopener noreferrer"
+											href={work.deploye_url}
+											title="Visit website"
+											className="flex flex-1 items-center justify-center gap-2 rounded-lg border-2 border-white/15 py-2.5 text-sm font-semibold text-white transition-colors duration-150 hover:border-teal-400 hover:bg-teal-500/10 hover:text-teal-300"
+										>
+											<span>Visit website</span>
+											<HiOutlineArrowNarrowRight aria-hidden="true" />
+										</a>
+									)}
+									{work.repo_url && (
+										<a
+											target="_blank"
+											rel="noopener noreferrer"
+											href={work.repo_url}
+											title="View source code on GitHub"
+											className="flex flex-1 items-center justify-center gap-2 rounded-lg border-2 border-white/15 py-2.5 text-sm font-semibold text-white transition-colors duration-150 hover:border-teal-400 hover:bg-teal-500/10 hover:text-teal-300"
+										>
 											<FaGithub aria-hidden="true" />
 											<span>Source code</span>
-										</>
+										</a>
 									)}
-									<HiOutlineArrowNarrowRight aria-hidden="true" />
-								</a>
+								</div>
 							</div>
 						</motion.div>
 					);
