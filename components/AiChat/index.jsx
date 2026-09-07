@@ -94,9 +94,18 @@ const AiChat = () => {
 	const [input, setInput] = useState("");
 	const [loading, setLoading] = useState(false);
 
+	const [showScrollTop, setShowScrollTop] = useState(false);
+
 	const bottomRef = useRef(null);
 	const inputRef = useRef(null);
 	const panelRef = useRef(null);
+
+	// Show scroll-to-top after scrolling down 300px
+	useEffect(() => {
+		function onScroll() { setShowScrollTop(window.scrollY > 300); }
+		window.addEventListener("scroll", onScroll, { passive: true });
+		return () => window.removeEventListener("scroll", onScroll);
+	}, []);
 
 	// Only show presets when no user message has been sent yet
 	const showPresets = messages.length === 1;
@@ -264,7 +273,31 @@ const AiChat = () => {
 				)}
 			</AnimatePresence>
 
-			{/* Floating toggle button */}
+			{/* Scroll to top button — appears above chat button when scrolled down */}
+			<AnimatePresence>
+				{showScrollTop && (
+					<motion.button
+						key="scroll-top"
+						onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+						aria-label="Scroll to top"
+						title="Back to top"
+						initial={{ opacity: 0, y: 10 }}
+						animate={{ opacity: 1, y: 0 }}
+						exit={{ opacity: 0, y: 10 }}
+						transition={{ duration: 0.2 }}
+						className="fixed bottom-24 right-[1.375rem] z-50 flex h-11 w-11 items-center justify-center rounded-full bg-teal-500 shadow-card-hover transition-opacity hover:opacity-90 sm:right-[1.875rem]"
+					>
+						{/* eslint-disable-next-line @next/next/no-img-element */}
+						<img
+							src="/assets/scroll-top-icon.png"
+							alt="Scroll to top"
+							className="h-11 w-11 rounded-full object-cover mix-blend-luminosity brightness-150"
+						/>
+					</motion.button>
+				)}
+			</AnimatePresence>
+
+			{/* Floating chat toggle button */}
 			<motion.button
 				onClick={() => setOpen((prev) => !prev)}
 				aria-label={open ? "Close chat" : "Open AI chat assistant"}

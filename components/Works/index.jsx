@@ -81,8 +81,8 @@ const Works = () => {
 								<p className="mt-2 flex-1 text-sm leading-6 text-slate-400">
 									{work.description}
 								</p>
-								<div className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2">
-									{work.deploye_url && (
+								<div className={`mt-5 grid gap-2 ${work.deploye_url && work.deploye_url !== "NONE" && work.repo_url ? "grid-cols-1 sm:grid-cols-2" : "grid-cols-1"}`}>
+									{work.deploye_url && work.deploye_url !== "NONE" && (
 										<a
 											target="_blank"
 											rel="noopener noreferrer"

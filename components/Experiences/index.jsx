@@ -55,6 +55,7 @@ const Experiences = () => {
 									height={22}
 									alt=""
 									className="rounded-sm"
+									style={{ width: 22, height: "auto" }}
 								/>
 							</span>
 
@@ -68,6 +69,7 @@ const Experiences = () => {
 										height={24}
 										alt=""
 										className="rounded-sm"
+										style={{ width: 24, height: "auto" }}
 									/>
 								</span>
 								<div className="h-px flex-1 bg-gradient-to-l from-transparent via-teal-400/40 to-teal-400/60" />
