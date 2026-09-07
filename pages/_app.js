@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import { Poppins } from 'next/font/google';
+import { Analytics } from "@vercel/analytics/react";
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -23,6 +24,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <div className={poppins.className}>
       <Component {...pageProps} />
+      <Analytics />
     </div>
   )
 }
